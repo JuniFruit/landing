@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Mont";
+  src: url("mont-bold-webfont.woff2") format("woff2"), url("mont-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-bolditalic-webfont.woff2") format("woff2"),
+    url("mont-bolditalic-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-heavy-webfont.woff2") format("woff2"),
+    url("mont-heavy-webfont.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-heavyitalic-webfont.woff2") format("woff2"),
+    url("mont-heavyitalic-webfont.woff") format("woff");
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-light-webfont.woff2") format("woff2"),
+    url("mont-light-webfont.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-lightitalic-webfont.woff2") format("woff2"),
+    url("mont-lightitalic-webfont.woff") format("woff");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-regular-webfont.woff2") format("woff2"),
+    url("mont-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-regularitalic-webfont.woff2") format("woff2"),
+    url("mont-regularitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-semibold-webfont.woff2") format("woff2"),
+    url("mont-semibold-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("mont-semibolditalic-webfont.woff2") format("woff2"),
+    url("mont-semibolditalic-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}

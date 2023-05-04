@@ -1,0 +1,86 @@
+@import "../../styles/utils";
+
+.container {
+  @apply relative mx-auto;
+  /* @extend %content-padding; */
+  .wrapper {
+    @apply relative;
+    .heading {
+      @apply absolute left-5 top-1/2 z-10 rounded-full flex flex-col gap-10;
+      mix-blend-mode: difference;
+      > h1 {
+        @apply relative opacity-0 z-10 text-white italic  font-bold text-3xl animate-slideInTop;
+        letter-spacing: 0.08rem;
+        animation-fill-mode: forwards;
+        animation-delay: 0.8s;
+      }
+      > h2 {
+        @apply italic opacity-0 font-normal text-2xl text-white animate-slideInBottom;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        line-height: 1.75rem;
+        letter-spacing: 0.1rem;
+      }
+      @screen sm {
+        > h1 {
+          @apply text-4xl;
+        }
+        > h2 {
+          @apply text-3xl;
+        }
+      }
+    }
+
+    .hero_img {
+      @apply relative mx-auto overflow-hidden rounded-r-full rounded-l-full;
+      height: 25rem;
+      width: 15rem;
+      > img {
+        @apply w-full h-full;
+        object-fit: cover;
+        @screen sm {
+          object-fit: fill;
+        }
+      }
+      @screen sm {
+        @apply w-1/2 h-full;
+      }
+      @screen md {
+        max-width: 20rem;
+        max-height: 35rem;
+      }
+      /* &::before {
+          @apply absolute left-0 bottom-0 w-full h-16;
+          content: "";
+          background: linear-gradient(0deg, var(--bg-var1), rgba(0, 0, 0, 0));
+          
+        } */
+
+      /* &::after {
+          @apply absolute left-0 top-0 w-full h-16;
+          content: "";
+          background: linear-gradient(180deg, var(--bg-var1), rgba(0, 0, 0, 0));
+        } */
+    }
+  }
+
+  .subhero {
+    @apply mt-16 mx-auto;
+
+    > p {
+      @apply text-text-main-300 text-xl italic flex flex-col gap-5 animate-slideInLeft opacity-0;
+      animation-delay: 1.2s;
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      line-height: 1.5rem;
+      > span {
+        @apply font-bold text-accent-600;
+      }
+
+      @screen sm {
+        @apply text-2xl;
+      }
+    }
+  }
+}

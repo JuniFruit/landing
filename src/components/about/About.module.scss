@@ -1,0 +1,7 @@
+.container {
+  @apply mt-5;
+
+  > h2 {
+    @apply text-accent-600 text-3xl  font-bold italic;
+  }
+}

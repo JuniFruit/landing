@@ -1,0 +1,21 @@
+.social {
+  @apply rounded-lg h-5 w-5 opacity-80 transition-all duration-300;
+
+  @media (hover: hover) {
+    @apply hover:opacity-100 hover:text-accent-400;
+  }
+  &:focus-visible {
+    @apply hover:opacity-100 hover:text-accent-400;
+  }
+}
+
+.icon_btn {
+  @apply rounded-lg h-8 w-8  transition-all duration-300;
+
+  @media (hover: hover) {
+    @apply hover:text-text-main-200;
+  }
+  &:focus-visible {
+    @apply hover:text-text-main-200;
+  }
+}

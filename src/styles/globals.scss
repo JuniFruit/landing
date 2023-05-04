@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "../../public/static/font/stylesheet.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-600: #fbf2e1;
+  --main-500: #faf2e2;
+  --main-400: #f8f1e4;
+  --main-300: #f7f1e5;
+  --main-200: #f2efea;
+
+  --bg-var1: #fff5ed;
+
+  --text-main-600: #31221c;
+  --text-main-500: #3d2b23;
+  --text-main-400: #49342a;
+  --text-main-300: #563d31;
+  --text-main-200: #624538;
+
+  --accent-600: #b81810;
+  --accent-500: #ca1b11;
+  --accent-400: #dc1d13;
+  --accent-300: #eb2218;
+  --accent-200: #ed332a;
+}
+
+html,
+body,
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  line-height: 1.3rem;
+  overflow-x: hidden;
+  letter-spacing: 0.05rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  tab-size: 2;
+  font-family: "Mont", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.005em;
+}
+
+body {
+  @apply bg-bg-var1 mx-auto relative;
+}
+
+a {
+  appearance: none;
+  text-decoration: none;
+  outline: none;
+}
+
+input,
+button {
+  outline: none;
+  appearance: none;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}

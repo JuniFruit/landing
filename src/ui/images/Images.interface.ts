@@ -1,0 +1,1 @@
+import { ImgHTMLAttributes } from "react";

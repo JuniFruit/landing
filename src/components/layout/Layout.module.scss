@@ -1,0 +1,7 @@
+.page_wrapper {
+  @apply h-full py-2;
+
+  > main {
+    @apply h-full;
+  }
+}
