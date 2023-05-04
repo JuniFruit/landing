@@ -1,0 +1,10 @@
+@import "../../styles/utils.scss";
+
+.container {
+  @apply flex justify-between items-center px-4 mx-auto;
+  @extend %content-padding;
+  @extend %content-max-width;
+  @screen lg {
+    @apply px-6;
+  }
+}
