@@ -1,23 +1,17 @@
+import { SectionHeading } from "@/ui/typography/Typography";
 import { FC } from "react";
+
 import styles from "./About.module.scss";
 import { Box } from "./AboutBoxes";
-import { IoAccessibility } from "react-icons/io5";
-const data = [
-  {
-    title: "",
-    description: "",
-    icon: IoAccessibility,
-    color: "",
-  },
-];
+import { data } from "./data";
 
 const About: FC = () => {
   return (
     <div className={styles.container}>
-      <h2>Обо мне</h2>
+      <SectionHeading>Обо мне</SectionHeading>
       <div className={styles.boxes}>
         {data.map(item => (
-          <Box {...item} />
+          <Box {...item} key={item.title} />
         ))}
       </div>
     </div>

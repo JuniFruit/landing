@@ -1,7 +1,42 @@
 .container {
   @apply mt-5;
+}
 
-  > h2 {
-    @apply text-accent-600 text-3xl  font-bold italic;
+.box_container {
+  @apply flex flex-col opacity-0 gap-2 items-center;
+  max-width: 15rem;
+  .icon_container {
+    @apply w-16 h-10 px-1 opacity-80;
   }
+  .box_body {
+    @apply flex flex-col gap-3;
+    > h3 {
+      @apply text-accent-500 text-center font-bold text-base;
+    }
+    > p {
+      @apply text-xs italic text-center;
+    }
+
+    @screen md {
+      > h3 {
+        @apply text-xl;
+      }
+      > p {
+        @apply text-base leading-6;
+      }
+    }
+  }
+  @screen md {
+    max-width: 30rem;
+  }
+}
+
+.boxes {
+  @apply flex flex-col gap-6 items-center mt-10;
+}
+
+.box_visible {
+  @apply animate-slideInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }

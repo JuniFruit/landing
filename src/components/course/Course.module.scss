@@ -1,0 +1,95 @@
+.course_container {
+  @apply flex flex-col  gap-5;
+}
+
+.img_container {
+  @apply w-full overflow-hidden;
+  max-height: 15rem;
+
+  > img {
+    @apply w-full h-full;
+  }
+}
+
+.course_contents_list {
+  @apply flex flex-col gap-3;
+}
+
+.list_container {
+  @apply opacity-0 flex gap-2 items-center w-full;
+  > svg {
+    @apply w-4 h-4;
+  }
+  > div {
+    width: 80%;
+    > h3 {
+      @apply text-sm font-semibold text-text-main-600;
+    }
+    > p {
+      @apply text-sm text-text-main-300;
+    }
+  }
+}
+.list_container_active {
+  @apply animate-slideInRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.course_heading {
+  @apply text-3xl font-bold text-text-main-600 leading-7;
+}
+
+.contents {
+  @apply flex flex-col gap-10 py-2 px-1;
+  > h2 {
+    @apply text-2xl font-bold text-accent-600 italic;
+  }
+}
+
+.spoiler_container {
+  @apply py-3 flex flex-col gap-5;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  > button {
+    @apply flex justify-between text-2xl text-start font-bold text-accent-600 italic;
+  }
+  .spoiler_content {
+    @apply overflow-hidden pointer-events-none opacity-0 transition-all duration-200;
+    max-height: 0rem;
+  }
+  .spoiler_content_active {
+    @apply pointer-events-auto opacity-100;
+    max-height: 20rem;
+  }
+}
+
+.requirements {
+  @apply text-xs font-light flex flex-col gap-5;
+  > li {
+    @apply ml-5 list-disc text-xs;
+  }
+}
+
+.course_intro {
+  @apply text-md my-5;
+}
+
+.price {
+  @apply flex flex-col gap-2 px-2 animate-fadeIn;
+  animation-duration: 1.5s;
+
+  > span {
+    @apply text-accent-500 text-4xl font-bold;
+  }
+  > p {
+    @apply font-normal text-text-main-600 text-sm;
+  }
+}
+
+.general_course_description {
+  @apply flex flex-col gap-3;
+  > p {
+    @apply text-xs  text-text-main-500;
+  }
+}

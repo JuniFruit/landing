@@ -69,11 +69,10 @@
     @apply mt-16 mx-auto;
 
     > p {
-      @apply text-text-main-300 text-xl italic flex flex-col gap-5 animate-slideInLeft opacity-0;
+      @apply text-text-main-300 text-xl italic flex flex-col gap-5 animate-slideInLeft opacity-0 leading-7;
       animation-delay: 1.2s;
       animation-fill-mode: forwards;
       animation-duration: 1s;
-      line-height: 1.5rem;
       > span {
         @apply font-bold text-accent-600;
       }

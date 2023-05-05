@@ -5,15 +5,13 @@
     @apply absolute -top-32 left-0 w-full h-32 -z-10;
     background: linear-gradient(180deg, var(--bg-var1), var(--main-500));
   }
+  > div:last-child {
+    @apply mx-auto;
+  }
 }
 
-.hero,
-.wrapper {
+.hero {
   @apply mx-auto;
   @extend %content-padding;
   @extend %content-max-width;
-}
-
-.wrapper {
-  @apply flex flex-col gap-5;
 }

@@ -1,0 +1,41 @@
+.container {
+  @apply mt-5;
+
+  > p {
+    @apply text-text-main-300 text-xl italic my-5 leading-7;
+    @screen sm {
+      @apply text-2xl;
+    }
+  }
+}
+
+.spoiler {
+  @apply flex cursor-pointer items-center bg-bg-var1 transition-all duration-200 justify-center rounded-full px-1 py-2 font-semibold text-md gap-2 text-text-main-400;
+  background-color: #e6dfd999;
+  > span {
+    @apply text-accent-600 transition-all duration-200;
+  }
+  @media (hover: hover) {
+    @apply hover:text-accent-600;
+    &:hover {
+      background-color: #d3ccc699;
+      > span {
+        @apply text-text-main-200 scale-125;
+      }
+    }
+  }
+  &:focus-within {
+    @apply text-accent-600;
+    background-color: #d3ccc699;
+    > span {
+      @apply text-text-main-200 scale-125;
+    }
+  }
+}
+
+.spoiler_container {
+  @apply flex flex-col gap-5;
+}
+.spoiler_body {
+  @apply flex flex-col gap-2;
+}
