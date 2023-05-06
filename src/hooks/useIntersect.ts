@@ -16,7 +16,6 @@ export const useIntersect = ({ onIntersect, options, isOnce = false }: IUseInter
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         setIsInersecting(entry.isIntersecting);
-        console.log(entry);
         if (entry.isIntersecting && !!onIntersect) onIntersect(entry);
         if (entry.isIntersecting && isOnce) observer.unobserve(ref.current);
       });

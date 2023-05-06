@@ -1,19 +1,22 @@
 .container {
-  @apply mt-5;
+  @apply mt-16;
 
   > p {
-    @apply text-text-main-300 text-xl italic my-5 leading-7;
+    @apply text-text-main-300 text-xs font-normal opacity-80 italic my-5 leading-7;
     @screen sm {
-      @apply text-2xl;
+      @apply text-xl;
     }
   }
 }
 
 .spoiler {
-  @apply flex cursor-pointer items-center bg-bg-var1 transition-all duration-200 justify-center rounded-full px-1 py-2 font-semibold text-md gap-2 text-text-main-400;
+  @apply flex  cursor-pointer items-center bg-bg-var1 transition-all duration-200 justify-center rounded-full px-1 py-2 font-semibold text-xs gap-2 text-text-main-400;
   background-color: #e6dfd999;
+
   > span {
     @apply text-accent-600 transition-all duration-200;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
   }
   @media (hover: hover) {
     @apply hover:text-accent-600;
@@ -24,17 +27,21 @@
       }
     }
   }
-  &:focus-within {
+  &:focus-visible {
     @apply text-accent-600;
     background-color: #d3ccc699;
     > span {
       @apply text-text-main-200 scale-125;
     }
   }
+  @screen md {
+    @apply text-md mx-auto;
+    width: 50rem;
+  }
 }
 
 .spoiler_container {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col gap-5 my-16;
 }
 .spoiler_body {
   @apply flex flex-col gap-2;

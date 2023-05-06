@@ -4,10 +4,13 @@ import Meta from "@/components/meta/Meta";
 import styles from "./page.module.scss";
 import Products from "@/components/products/Products";
 import { PaddingWrapper } from "@/ui/wrappers/Wrapper";
-const Home = () => {
+import { NextPage } from "next";
+import { IPageProps } from "@/types/types";
+
+const Home: NextPage<IPageProps> = ({ title, description }) => {
   return (
     <>
-      <Meta title="Анна Русакова" image="" />
+      <Meta title={title} description={description} image="" />
       <section className={styles.hero}>
         <Hero />
       </section>
@@ -20,6 +23,15 @@ const Home = () => {
       </section>
     </>
   );
+};
+
+export const getStaticProps = () => {
+  return {
+    props: {
+      title: "Анна Русакова",
+      description: "Преподаватель",
+    },
+  };
 };
 
 export default Home;

@@ -1,12 +1,24 @@
 import General from "@/components/course/General";
-import React, { FC } from "react";
+import Meta from "@/components/meta/Meta";
+import { IPageProps } from "@/types/types";
+import { NextPage } from "next";
 
-const GeneralCourse: FC = () => {
+const GeneralCourse: NextPage<IPageProps> = ({ title, description }) => {
   return (
     <>
+      <Meta title={title} description={description} image="" />
       <General />
     </>
   );
+};
+
+export const getStaticProps = () => {
+  return {
+    props: {
+      title: "Общий английский",
+      description: "",
+    },
+  };
 };
 
 export default GeneralCourse;

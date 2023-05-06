@@ -20,8 +20,8 @@ const CourseImage: FC<ICourseImage> = props => {
   );
 };
 
-const CourseIntro: FC<ICourseIntro> = ({ text }) => {
-  return <p className={styles.course_intro}>{text}</p>;
+const CourseIntro: FC<PropsWithChildren> = ({ children }) => {
+  return <p className={styles.course_intro}>{children}</p>;
 };
 
 const ListItem: FC<IListItem> = ({ title, description }) => {
@@ -40,7 +40,7 @@ const ListItem: FC<IListItem> = ({ title, description }) => {
     </li>
   );
 };
-const Spoiler: FC<PropsWithChildren> = ({ children }) => {
+const Spoiler: FC<PropsWithChildren<{ title: string }>> = ({ children, title }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -49,9 +49,9 @@ const Spoiler: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className={styles.spoiler_container} aria-haspopup={true} aria-expanded={isOpen}>
-      <button onClick={handleClick}>
+      <button onClick={handleClick} aria-label={`${!isOpen ? "открыть" : "закрыть"} блок ${title}`}>
         {" "}
-        Требования <span>{isOpen ? IoCaretUp({}) : IoCaretDown({})}</span>
+        {title} <span>{isOpen ? IoCaretUp({}) : IoCaretDown({})}</span>
       </button>
       <div className={`${styles.spoiler_content} ${isOpen ? styles.spoiler_content_active : ""}`}>
         {children}
@@ -100,6 +100,10 @@ const CourseDescription: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
+const CourseParagraph: FC<PropsWithChildren> = ({ children }) => {
+  return <p className={styles.course_p}>{children}</p>;
+};
+
 export {
   CourseIntro,
   CoursePrice,
@@ -109,4 +113,5 @@ export {
   ListItem,
   Spoiler,
   CourseHeading,
+  CourseParagraph,
 };

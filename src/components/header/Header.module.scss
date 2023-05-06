@@ -1,10 +1,53 @@
 @import "../../styles/utils.scss";
 
-.container {
+.container,
+.sticky_header {
   @apply flex justify-between items-center px-4 mx-auto;
   @extend %content-padding;
   @extend %content-max-width;
   @screen lg {
     @apply px-6;
+  }
+}
+.sticky_header {
+  @apply fixed top-0 left-0 z-50 w-full mx-0 shadow-md  bg-main-600 animate-fadeIn;
+  max-width: 100%;
+}
+
+.nav_container {
+  @apply fixed w-full z-50 top-0 left-0 animate-fadeIn;
+  animation-duration: 0.3s;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  .nav_wrapper {
+    @apply w-full  opacity-0 absolute animate-slideInRight overflow-hidden top-0 right-0 flex flex-col py-5 px-6 gap-10 bg-main-600;
+    @screen sm {
+      max-width: 30rem;
+    }
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s;
+    animation-delay: 0.3s;
+    height: 100%;
+    .nav_header {
+      @apply flex justify-between items-center mt-5;
+      > h2 {
+        @apply text-xl font-bold opacity-70 text-text-main-600;
+      }
+      > button {
+        @apply opacity-80;
+      }
+    }
+    .nav_links {
+      > ul {
+        @apply flex w-full flex-col gap-10 py-5;
+      }
+    }
+  }
+}
+
+.social_links {
+  @apply flex gap-5 justify-center items-center;
+  > li {
+    @apply w-6 h-6;
   }
 }

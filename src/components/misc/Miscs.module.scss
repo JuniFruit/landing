@@ -1,0 +1,9 @@
+.box_container {
+  @apply flex flex-col items-center gap-5;
+  > svg {
+    @apply w-5 h-5 opacity-50;
+  }
+  > h6 {
+    @apply text-text-main-600 text-xs;
+  }
+}

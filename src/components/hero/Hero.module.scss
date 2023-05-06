@@ -9,17 +9,16 @@
       @apply absolute left-5 top-1/2 z-10 rounded-full flex flex-col gap-10;
       mix-blend-mode: difference;
       > h1 {
-        @apply relative opacity-0 z-10 text-white italic  font-bold text-3xl animate-slideInTop;
+        @apply relative opacity-0 z-10 text-white  font-bold text-3xl animate-slideInTop;
         letter-spacing: 0.08rem;
         animation-fill-mode: forwards;
         animation-delay: 0.8s;
       }
       > h2 {
-        @apply italic opacity-0 font-normal text-2xl text-white animate-slideInBottom;
+        @apply italic leading-10 opacity-0 font-normal text-2xl text-white animate-slideInBottom;
         animation-delay: 1s;
         animation-fill-mode: forwards;
         animation-duration: 1s;
-        line-height: 1.75rem;
         letter-spacing: 0.1rem;
       }
       @screen sm {
@@ -27,7 +26,15 @@
           @apply text-4xl;
         }
         > h2 {
-          @apply text-3xl;
+          @apply text-xl;
+        }
+      }
+      @screen md {
+        > h1 {
+          @apply text-5xl;
+        }
+        > h2 {
+          @apply text-4xl;
         }
       }
     }
@@ -50,18 +57,6 @@
         max-width: 20rem;
         max-height: 35rem;
       }
-      /* &::before {
-          @apply absolute left-0 bottom-0 w-full h-16;
-          content: "";
-          background: linear-gradient(0deg, var(--bg-var1), rgba(0, 0, 0, 0));
-          
-        } */
-
-      /* &::after {
-          @apply absolute left-0 top-0 w-full h-16;
-          content: "";
-          background: linear-gradient(180deg, var(--bg-var1), rgba(0, 0, 0, 0));
-        } */
     }
   }
 
@@ -69,7 +64,7 @@
     @apply mt-16 mx-auto;
 
     > p {
-      @apply text-text-main-300 text-xl italic flex flex-col gap-5 animate-slideInLeft opacity-0 leading-7;
+      @apply text-text-main-300 text-xl flex flex-col gap-5 animate-slideInLeft opacity-0 leading-7;
       animation-delay: 1.2s;
       animation-fill-mode: forwards;
       animation-duration: 1s;
@@ -80,6 +75,23 @@
       @screen sm {
         @apply text-2xl;
       }
+    }
+  }
+}
+
+.info_boxes_right {
+  @apply absolute   hidden;
+
+  @apply top-1/2;
+  transform: translateY(-70%) translateX(-10%);
+  right: 10%;
+  @screen lg {
+    @apply block;
+    > div {
+      @apply opacity-0  flex flex-col gap-16 animate-scaleIn;
+      animation-duration: 1s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
     }
   }
 }

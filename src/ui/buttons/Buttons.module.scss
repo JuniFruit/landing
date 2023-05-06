@@ -1,5 +1,5 @@
 .social {
-  @apply rounded-lg h-5 w-5 opacity-80 transition-all duration-300;
+  @apply rounded-lg h-full w-full opacity-80 transition-all duration-300;
 
   @media (hover: hover) {
     @apply hover:opacity-100 hover:text-accent-400;
@@ -39,5 +39,42 @@
   }
   &:focus-visible {
     @apply hover:bg-accent-400;
+  }
+}
+
+.headerLink_wrapper {
+  @apply flex relative gap-2 text-sm font-bold items-center opacity-80 transition-colors;
+  @screen sm {
+    @apply text-md;
+  }
+  > span {
+    @apply h-5 w-5;
+  }
+  &::before {
+    @apply absolute opacity-0 rounded-sm left-0 w-0 transition-all bg-accent-500;
+    content: "";
+    height: 0.15rem;
+    top: calc(100% + 0.5rem);
+  }
+  @media (hover: hover) {
+    &:hover {
+      @apply text-accent-500;
+      &::before {
+        @apply opacity-100 w-full;
+      }
+    }
+  }
+  &:focus-visible {
+    @apply text-accent-500;
+    &::before {
+      @apply opacity-100 w-full;
+    }
+  }
+}
+
+.header_active {
+  @apply text-accent-500 opacity-100;
+  &::before {
+    @apply opacity-100 w-full;
   }
 }

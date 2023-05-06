@@ -6,6 +6,7 @@ import {
   CourseHeading,
   CourseImage,
   CourseIntro,
+  CourseParagraph,
   CoursePrice,
   ListItem,
   Spoiler,
@@ -14,7 +15,65 @@ import { IMG_LINKS } from "@/utils/general";
 import { BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
 import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 
-const COURSE_CONTENTS = [
+const General: FC = () => {
+  return (
+    <section className={styles.course_container}>
+      <CourseImage src={IMG_LINKS.AVATAR} width={150} height={200} alt="Общий английский" />
+      <PaddingWrapper>
+        <CourseHeading title="Общий Английский" />
+        <CourseIntro>
+          Научись читать, говорить, слушать и мыслить на самом популярном международном языке в мире
+        </CourseIntro>
+        <CoursePrice price={25} clarification="за 1 час индивидуального занятия" />
+        <CoursePrice price={20} clarification="за 1 час занятия в паре" />
+        <EnrollBtn>Записаться</EnrollBtn>
+        <BoxSolid>
+          <CourseContents>
+            <ul className={styles.course_contents_list}>
+              {COURSE_CONTENTS.map(item => (
+                <ListItem {...item} key={item.title} />
+              ))}
+            </ul>
+          </CourseContents>
+        </BoxSolid>
+        <CourseDescription>
+          <div className={styles.general_course_description}>
+            <CourseParagraph>
+              В своей работе за основу я беру учебник, который подходит под ваш уровня\возраст\
+              цели.
+            </CourseParagraph>
+            <CourseParagraph>
+              Подбираю дополнительные материалы (видео\игры\статьи\рассказы).
+            </CourseParagraph>
+            <CourseParagraph>
+              Часто использую интерактивные платформы edvibe\wordwall\ и т.п.
+            </CourseParagraph>
+            <CourseParagraph>
+              Для большего погружения в язык мои ученики смотрят сериалы на английском с субтитрами
+              и читают книги в оригинале.
+            </CourseParagraph>
+          </div>
+        </CourseDescription>
+        <Spoiler title="Требования">
+          <ol className={styles.requirements}>
+            <li>
+              На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}
+              <ReferenceLink href="google.com">здесь</ReferenceLink>{" "}
+            </li>
+            <li>
+              Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства
+              и подтверждения уровня.{" "}
+            </li>
+          </ol>
+        </Spoiler>
+      </PaddingWrapper>
+    </section>
+  );
+};
+
+export default General;
+
+var COURSE_CONTENTS = [
   {
     title: "Бегло говорить",
     description: "Научу быстро и качественно говорить на уровне С1",
@@ -43,55 +102,3 @@ const COURSE_CONTENTS = [
       "Учиться можно не только на уроке, просматривая фильмы ты быстрее осваиваешь новые слова и фразы",
   },
 ];
-
-const General: FC = () => {
-  return (
-    <section className={styles.course_container}>
-      <CourseImage src={IMG_LINKS.AVATAR} width={150} height={200} alt="Общий английский" />
-      <PaddingWrapper>
-        <CourseHeading title="Общий Английский" />
-        <CourseIntro text="Научись читать, говорить, слушать и мыслить на самом популярном международном языке в мире" />
-        <CoursePrice price={25} clarification="за 1 час индивидуального занятия" />
-        <CoursePrice price={20} clarification="за 1 час занятия в паре" />
-        <EnrollBtn>Записаться</EnrollBtn>
-        <BoxSolid>
-          <CourseContents>
-            <ul className={styles.course_contents_list}>
-              {COURSE_CONTENTS.map(item => (
-                <ListItem {...item} key={item.title} />
-              ))}
-            </ul>
-          </CourseContents>
-        </BoxSolid>
-        <CourseDescription>
-          <div className={styles.general_course_description}>
-            <p>
-              В своей работе за основу я беру учебник, который подходит под ваш уровня\возраст\
-              цели.
-            </p>
-            <p>Подбираю дополнительные материалы (видео\игры\статьи\рассказы).</p>
-            <p>Часто использую интерактивные платформы edvibe\wordwall\ и т.п.</p>
-            <p>
-              Для большего погружения в язык мои ученики смотрят сериалы на английском с субтитрами
-              и читают книги в оригинале.
-            </p>
-          </div>
-        </CourseDescription>
-        <Spoiler>
-          <ol className={styles.requirements}>
-            <li>
-              На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}
-              <ReferenceLink href="google.com">здесь</ReferenceLink>{" "}
-            </li>
-            <li>
-              Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства
-              и подтверждения уровня.{" "}
-            </li>
-          </ol>
-        </Spoiler>
-      </PaddingWrapper>
-    </section>
-  );
-};
-
-export default General;
