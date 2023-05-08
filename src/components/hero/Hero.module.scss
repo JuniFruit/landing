@@ -5,81 +5,55 @@
   /* @extend %content-padding; */
   .wrapper {
     @apply relative;
-    .heading {
-      @apply absolute left-5 top-1/2 z-10 rounded-full flex flex-col gap-10;
-      mix-blend-mode: difference;
-      > h1 {
-        @apply relative opacity-0 z-10 text-white  font-bold text-3xl animate-slideInTop;
-        letter-spacing: 0.08rem;
-        animation-fill-mode: forwards;
-        animation-delay: 0.8s;
-      }
-      > h2 {
-        @apply italic leading-10 opacity-0 font-normal text-2xl text-white animate-slideInBottom;
-        animation-delay: 1s;
-        animation-fill-mode: forwards;
-        animation-duration: 1s;
-        letter-spacing: 0.1rem;
-      }
-      @screen sm {
+    .heading_wrapper {
+      @apply w-full h-full absolute left-0 top-1/2 z-10 -translate-y-1/2 flex justify-center items-center;
+      .heading {
+        @apply text-center flex flex-col gap-5;
+        max-width: 35rem;
         > h1 {
-          @apply text-4xl;
+          @apply uppercase relative opacity-0 z-10 text-main-200 leading-10 font-bold text-2xl  animate-slideInTop;
+          letter-spacing: 0.08rem;
+          animation-fill-mode: forwards;
+          animation-duration: 1s;
+          animation-delay: 0.8s;
         }
-        > h2 {
-          @apply text-xl;
+        > p {
+          @apply text-sm text-main-200 font-bold opacity-0 animate-slideInBottom;
+          animation-fill-mode: forwards;
+          animation-duration: 1s;
+          animation-delay: 1.2s;
         }
-      }
-      @screen md {
-        > h1 {
-          @apply text-5xl;
-        }
-        > h2 {
-          @apply text-4xl;
-        }
-      }
-    }
 
-    .hero_img {
-      @apply relative mx-auto overflow-hidden rounded-r-full rounded-l-full;
-      height: 25rem;
-      width: 15rem;
-      > img {
-        @apply w-full h-full;
-        object-fit: cover;
         @screen sm {
-          object-fit: fill;
+          > h1 {
+            @apply text-4xl leading-relaxed;
+          }
         }
-      }
-      @screen sm {
-        @apply w-1/2 h-full;
-      }
-      @screen md {
-        max-width: 20rem;
-        max-height: 35rem;
-      }
-    }
-  }
-
-  .subhero {
-    @apply mt-16 mx-auto;
-
-    > p {
-      @apply text-text-main-300 text-xl flex flex-col gap-5 animate-slideInLeft opacity-0 leading-7;
-      animation-delay: 1.2s;
-      animation-fill-mode: forwards;
-      animation-duration: 1s;
-      > span {
-        @apply font-bold text-accent-600;
-      }
-
-      @screen sm {
-        @apply text-2xl;
       }
     }
   }
 }
+.hero_img_container {
+  @apply relative flex items-center;
+  .hero_img {
+    @apply w-full relative mx-auto overflow-hidden;
+    /* background-image: url("https://thumb.tildacdn.com/tild3231-6531-4539-a466-643736393235/-/format/webp/3_copy.jpg"); */
+    background-image: url("/static/images/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 35rem;
+  }
 
-.info_boxes_right {
+  &::before {
+    @apply absolute top-0 left-0 w-full h-full;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+}
+
+/* .info_boxes_right {
   @apply absolute   hidden;
 
   @apply top-1/2;
@@ -94,4 +68,4 @@
       animation-fill-mode: forwards;
     }
   }
-}
+} */

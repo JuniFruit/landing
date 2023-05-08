@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "../../public/static/font/stylesheet.css";
-
+@import "./utils";
 *,
 *::after,
 *::before {
@@ -15,10 +15,19 @@
   --main-600: #fbf2e1;
   --main-500: #faf2e2;
   --main-400: #f8f1e4;
-  --main-300: #f7f1e5;
-  --main-200: #f2efea;
+  --main-300: #f9f0e5;
+  --main-200: white;
 
-  --bg-var1: #fff5ed;
+  --bg-var1: #f5f0e4;
+
+  --complimentary: #e4e9f5;
+  --analagous-1: #f5e8e4;
+  --analagous-2: #f5e8e4;
+  --analagous-3: #f2f5e4;
+  --analagous-4: #ea98b4;
+  --tetradic-1: #e4f5f0;
+  --tetradic-2: #f5e4e9;
+  --monochromatic-1: #917636;
 
   --text-main-600: #31221c;
   --text-main-500: #3d2b23;
@@ -26,11 +35,11 @@
   --text-main-300: #563d31;
   --text-main-200: #624538;
 
-  --accent-600: #b81810;
-  --accent-500: #ca1b11;
-  --accent-400: #dc1d13;
-  --accent-300: #eb2218;
-  --accent-200: #ed332a;
+  --accent-600: #db1d16;
+  --accent-500: #db1d16;
+  --accent-400: #db1d16;
+  --accent-300: #dc6159;
+  --accent-200: #eaa598;
 }
 
 html,
@@ -55,6 +64,7 @@ html {
 
 body {
   @apply bg-bg-var1 mx-auto relative;
+  max-width: 1800px;
 }
 
 a {

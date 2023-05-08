@@ -1,23 +1,13 @@
-import { ImgWithFallback } from "@/ui/images/Images";
-import { FC, PropsWithChildren, useState } from "react";
-import {
-  ICourseHeading,
-  ICourseImage,
-  ICourseIntro,
-  ICoursePrice,
-  IListItem,
-} from "./Course.interface";
-import styles from "./Course.module.scss";
-import { IoCafe, IoCaretDown, IoCaretUp, IoCheckmark } from "react-icons/io5";
 import { useIntersect } from "@/hooks/useIntersect";
+import { ImgBg } from "@/ui/images/Images";
 import { getIntersectDefaultOpt } from "@/utils/general";
+import { FC, PropsWithChildren, useState } from "react";
+import { IoCaretDown, IoCaretUp, IoCheckmark } from "react-icons/io5";
+import { ICourseHeading, ICourseImage, ICoursePrice, IListItem } from "./Course.interface";
+import styles from "./Course.module.scss";
 
-const CourseImage: FC<ICourseImage> = props => {
-  return (
-    <div className={styles.img_container}>
-      <ImgWithFallback {...props} />
-    </div>
-  );
+const CourseImage: FC<ICourseImage> = ({ image }) => {
+  return <ImgBg className={styles.img_container} aria-label="Логотип курса" imgSrc={image} />;
 };
 
 const CourseIntro: FC<PropsWithChildren> = ({ children }) => {
@@ -40,8 +30,12 @@ const ListItem: FC<IListItem> = ({ title, description }) => {
     </li>
   );
 };
-const Spoiler: FC<PropsWithChildren<{ title: string }>> = ({ children, title }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Spoiler: FC<PropsWithChildren<{ title: string; isInitOpen?: boolean }>> = ({
+  children,
+  title,
+  isInitOpen = false,
+}) => {
+  const [isOpen, setIsOpen] = useState(isInitOpen);
 
   const handleClick = () => {
     setIsOpen(() => !isOpen);

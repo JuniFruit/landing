@@ -1,1 +1,5 @@
-import { ImgHTMLAttributes } from "react";
+import { AllHTMLAttributes, ImgHTMLAttributes } from "react";
+
+export type IImageProps = {
+  imgSrc: string;
+} & AllHTMLAttributes<HTMLDivElement>;

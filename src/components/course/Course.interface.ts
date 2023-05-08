@@ -1,7 +1,9 @@
+import { IImageProps } from "@/ui/images/Images.interface";
 import { ImageProps } from "next/image";
 import { AllHTMLAttributes } from "react";
 
-export type ICourseImage = ImageProps;
+export type ICourseImage = { image: IImageProps["imgSrc"] };
+
 export type IListItem = {
   title: string;
   description: string;

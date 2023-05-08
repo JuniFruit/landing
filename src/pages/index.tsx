@@ -6,21 +6,16 @@ import Products from "@/components/products/Products";
 import { PaddingWrapper } from "@/ui/wrappers/Wrapper";
 import { NextPage } from "next";
 import { IPageProps } from "@/types/types";
+import Reviews from "@/components/reviews/Reviews";
 
 const Home: NextPage<IPageProps> = ({ title, description }) => {
   return (
     <>
       <Meta title={title} description={description} image="" />
-      <section className={styles.hero}>
-        <Hero />
-      </section>
-      <section className={styles.main_content}>
-        <div className={styles.bg_divider}></div>
-        <PaddingWrapper>
-          <About />
-          <Products />
-        </PaddingWrapper>
-      </section>
+      <Hero />
+      <About />
+      <Products />
+      <Reviews />
     </>
   );
 };

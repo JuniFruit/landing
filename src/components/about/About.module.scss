@@ -1,38 +1,51 @@
 .container {
-  @apply mt-16;
+  @apply mt-16 relative;
+}
+
+.capsule {
+  @apply bg-accent-600 rounded-full top-3 absolute py-4 px-3 w-10/12 left-1/2 -translate-x-1/2 shadow-md;
+  > * {
+    @apply text-white text-center;
+  }
 }
 
 .box_container {
-  @apply flex flex-col opacity-0 gap-2 items-center;
-  max-width: 15rem;
+  @apply w-full flex opacity-0 gap-2 items-center;
   .icon_container {
-    @apply w-16 h-10 px-1 opacity-80;
+    @apply w-12 h-12  px-1 opacity-80 text-main-300 shrink-0;
+
+    @screen md {
+      @apply w-16 h-16;
+    }
   }
   .box_body {
-    @apply flex flex-col gap-3;
+    @apply flex flex-col gap-1;
     > h3 {
-      @apply text-accent-500 text-center font-bold text-base;
+      @apply text-main-200 font-bold text-xs;
     }
     > p {
-      @apply text-xs italic text-center;
+      @apply text-xs font-light text-main-200;
     }
 
     @screen md {
       > h3 {
-        @apply text-xl;
+        @apply text-md;
       }
       > p {
-        @apply text-base leading-6;
+        @apply text-md leading-6;
       }
     }
   }
   @screen md {
-    max-width: 30rem;
+    width: 40rem;
   }
 }
 
 .boxes {
-  @apply flex flex-col gap-6 items-center mt-10;
+  @apply flex flex-col shadow-md mx-auto gap-6 items-center mt-10 bg-accent-600 rounded-3xl py-10 px-4;
+  @screen md {
+    max-width: 70rem;
+  }
 }
 
 .box_visible {
@@ -40,3 +53,9 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
+/* > h3 {
+  @apply text-transparent text-center font-bold text-base;
+  -webkit-text-stroke: 1px var(--accent-600);
+  letter-spacing: 0.05rem;
+} */

@@ -1,26 +1,22 @@
-import Image, { ImageProps } from "next/image";
 import { FC } from "react";
+import { IImageProps } from "./Images.interface";
 import styles from "./Images.module.scss";
-import { IMG_LINKS } from "@/utils/general";
 
-const ImgWithFallback: FC<ImageProps> = props => {
+const ImgBg: FC<IImageProps> = ({ imgSrc, ...rest }) => {
   return (
-    <Image
-      {...props}
-      onError={e => {
-        e.currentTarget.onerror = null;
-        e.currentTarget.src = IMG_LINKS.FALLBACK;
-      }}
-    />
+    <div {...rest} style={{ ...rest.style, backgroundImage: `url(${imgSrc})` }} role="img"></div>
   );
 };
 
-const Avatar: FC<ImageProps> = props => {
+const Avatar: FC<IImageProps> = ({ imgSrc, ...rest }) => {
   return (
-    <div className={styles.avatar}>
-      <ImgWithFallback {...props} />;
-    </div>
+    <div
+      {...rest}
+      className={styles.avatar}
+      style={{ ...rest.style, backgroundImage: `url(${imgSrc})` }}
+      role="img"
+    ></div>
   );
 };
 
-export { Avatar, ImgWithFallback };
+export { Avatar, ImgBg };

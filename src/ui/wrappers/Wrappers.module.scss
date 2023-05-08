@@ -6,7 +6,42 @@
 }
 
 .padding_wrapper {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col gap-5 mx-auto;
   @extend %content-padding;
   @extend %content-max-width;
+}
+
+.block_wrapper {
+  @apply py-20;
+}
+
+.phone_wrapper {
+  @apply relative shadow-bothXl  overflow-hidden bg-main-400;
+  width: 18rem;
+  border: 5px solid black;
+  border-radius: 2.5rem;
+  height: 35rem;
+  .phone_header {
+    @apply absolute z-10 top-3 left-1/2 -translate-x-1/2 flex items-center justify-between w-full px-3;
+    .phone_curtain {
+      @apply absolute z-10 left-1/2 -translate-x-1/2 w-20 h-5 rounded-full bg-black;
+    }
+    > p {
+      @apply text-black font-normal text-tiny text-center;
+      font-size: 0.5rem;
+    }
+  }
+  .phone_children_container {
+    @apply w-full h-full overflow-y-scroll mt-10 mb-10;
+    scrollbar-width: 4px;
+    &::-webkit-scrollbar {
+      @apply w-1;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply w-1 h-16 rounded-full bg-gray-400;
+    }
+  }
+  .phone_footer {
+    @apply w-full h-12;
+  }
 }

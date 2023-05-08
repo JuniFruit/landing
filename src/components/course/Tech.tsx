@@ -57,7 +57,7 @@ const Tech: FC = () => {
             </CourseParagraph>
           </div>
         </CourseDescription>
-        <Spoiler title="Требования">
+        <Spoiler title="Требования" isInitOpen={true}>
           <ol className={styles.requirements}>
             <li>Необходим уверенный А2 или начальный В1 уровень </li>
             <li>

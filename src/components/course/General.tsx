@@ -18,7 +18,7 @@ import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 const General: FC = () => {
   return (
     <section className={styles.course_container}>
-      <CourseImage src={IMG_LINKS.AVATAR} width={150} height={200} alt="Общий английский" />
+      <CourseImage image={IMG_LINKS.AVATAR} />
       <PaddingWrapper>
         <CourseHeading title="Общий Английский" />
         <CourseIntro>
@@ -54,7 +54,7 @@ const General: FC = () => {
             </CourseParagraph>
           </div>
         </CourseDescription>
-        <Spoiler title="Требования">
+        <Spoiler title="Требования" isInitOpen={true}>
           <ol className={styles.requirements}>
             <li>
               На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}

@@ -53,7 +53,7 @@ function HeaderContents() {
         title="На главную"
         onClick={() => window.scrollTo(0, 0)}
       >
-        <Avatar src={IMG_LINKS.AVATAR} width={30} height={30} alt="Анна Русакова" />
+        <Avatar imgSrc={IMG_LINKS.AVATAR} aria-label="Анна Русакова" />
       </Link>
       <div ref={ref}>
         <IconButton

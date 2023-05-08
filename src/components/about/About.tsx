@@ -4,17 +4,22 @@ import { FC } from "react";
 import styles from "./About.module.scss";
 import { Box } from "./AboutBoxes";
 import { data } from "./data";
+import { PaddingWrapper } from "@/ui/wrappers/Wrapper";
 
 const About: FC = () => {
   return (
-    <div className={styles.container}>
-      <SectionHeading>Обо мне</SectionHeading>
-      <div className={styles.boxes}>
-        {data.map(item => (
-          <Box {...item} key={item.title} />
-        ))}
+    <PaddingWrapper>
+      <div className={styles.container}>
+        <div className={styles.capsule}>
+          <SectionHeading>Обо мне</SectionHeading>
+        </div>
+        <div className={styles.boxes}>
+          {data.map(item => (
+            <Box {...item} key={item.title} />
+          ))}
+        </div>
       </div>
-    </div>
+    </PaddingWrapper>
   );
 };
 

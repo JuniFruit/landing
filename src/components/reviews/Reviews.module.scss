@@ -1,0 +1,53 @@
+.review_container {
+  @apply mx-auto flex flex-col gap-10;
+  max-width: 40rem;
+  > div {
+    @apply mx-auto;
+  }
+}
+
+.wrapper {
+  /* background-color: var(--tetradic-2);
+   */
+
+  @apply bg-main-600;
+
+  .review_heading {
+    @apply flex flex-col gap-5;
+    > h6 {
+      @apply text-black font-bold text-tiny;
+    }
+    > h2 {
+      @apply text-transparent  text-3xl leading-10;
+      -webkit-text-stroke: 1px var(--accent-600);
+    }
+    > h3 {
+      @apply font-bold text-xl leading-8;
+    }
+    span {
+      @apply text-accent-600;
+    }
+    > p {
+      @apply text-xs font-bold;
+    }
+    @screen md {
+      > h2 {
+        font-size: 2.5rem;
+      }
+      > h3 {
+        @apply text-xl;
+      }
+    }
+  }
+
+  .review_images {
+    @apply flex flex-col gap-2;
+
+    .review_img_box {
+      @apply overflow-hidden rounded-xl;
+      > * {
+        @apply w-full h-full;
+      }
+    }
+  }
+}

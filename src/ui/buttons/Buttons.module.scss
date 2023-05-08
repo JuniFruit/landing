@@ -32,13 +32,13 @@
 }
 
 .enroll {
-  @apply transition-all bg-accent-200 px-1 py-3 text-base font-bold duration-300 text-white;
+  @apply transition-all bg-accent-600 px-1 py-3 text-base font-bold duration-300 text-white;
 
   @media (hover: hover) {
-    @apply hover:bg-accent-400;
+    @apply hover:bg-black hover:text-accent-600;
   }
   &:focus-visible {
-    @apply hover:bg-accent-400;
+    @apply bg-black text-accent-600;
   }
 }
 
