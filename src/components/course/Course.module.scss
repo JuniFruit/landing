@@ -1,5 +1,13 @@
 .course_container {
   @apply flex flex-col  gap-5;
+  @screen md {
+    > div:last-child {
+      @apply -z-10;
+      > * {
+        @apply -z-10;
+      }
+    }
+  }
 }
 
 .img_container {
@@ -87,6 +95,9 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.5s;
+  @screen md {
+    @apply text-md;
+  }
 }
 
 .price {
@@ -116,5 +127,25 @@
       @apply text-base text-text-main-500;
       font-style: normal;
     }
+  }
+}
+
+.floating_box {
+  @apply overflow-hidden fixed top-0 right-0 z-10 rounded shadow-bothMd bg-main-600;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  min-width: 22rem;
+  max-width: 22rem;
+  height: max-content;
+  .floating_box_children {
+    @apply flex flex-col gap-5 px-4 py-5;
+  }
+}
+
+.course_large_layout {
+  @apply flex justify-between gap-5;
+  filter: opacity(1);
+  > *:first-child {
+    @apply flex flex-col gap-5;
+    max-width: 63%;
   }
 }

@@ -21,3 +21,12 @@ export type ICoursePrice = {
 export type ICourseIntro = {
   text: string;
 };
+
+export type IFloatingBox = {
+  courseImage: JSX.Element;
+};
+
+export type ICourseLargeLayout = {
+  leftChildren: JSX.Element[];
+  rightChildren: JSX.Element[];
+};

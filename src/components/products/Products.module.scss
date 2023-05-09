@@ -70,6 +70,11 @@
   @apply bg-accent-600;
   border-top: 3px solid rgba(0, 0, 0, 0.5);
   border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+  @screen md {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 3px solid rgba(0, 0, 0, 0.5);
+  }
   .product_heading {
     > h2 {
       -webkit-text-stroke: 1px var(--main-200);
@@ -102,7 +107,7 @@
   }
 }
 .interview_wrapper {
-  background-color: var(--analagous-1);
+  @apply relative bg-analagous-1 overflow-hidden;
   .product_heading {
     > h2 {
       -webkit-text-stroke: 1px var(--text-main-300);
@@ -125,6 +130,12 @@
         -webkit-text-stroke: 1px var(--accent-600);
       }
     }
+  }
+  .bg_svg_container {
+    @apply absolute right-0 opacity-20 rotate-90;
+    top: -5rem;
+    width: 20rem;
+    height: 20rem;
   }
 }
 
@@ -155,7 +166,7 @@
     @apply text-transparent text-center font-bold text-4xl w-max uppercase;
     font-size: 7rem;
     letter-spacing: 0.5rem;
-    -webkit-text-stroke: 1px var(--accent-600);
+    -webkit-text-stroke: 1px var(--accent-200);
   }
   @screen md {
     @apply hidden;

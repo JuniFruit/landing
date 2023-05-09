@@ -1,12 +1,12 @@
 @import "../../styles/utils.scss";
 
 .box_solid {
-  @apply px-1.5 py-3 border-text-main-600 overflow-x-hidden;
-  border: 1px solid;
+  @apply px-1.5 py-3  overflow-x-hidden;
+  border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 .padding_wrapper {
-  @apply flex flex-col gap-5 mx-auto;
+  @apply flex flex-col gap-5 mx-auto relative z-10;
   @extend %content-padding;
   @extend %content-max-width;
 }

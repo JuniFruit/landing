@@ -1,8 +1,9 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import { IBtn, INavLink, ISocialLink } from "./Button.interface";
 import styles from "./Buttons.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { IoArrowUp } from "react-icons/io5";
 
 const SocialLink: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }) => {
   return (
@@ -50,6 +51,21 @@ const NavLink: FC<INavLink> = ({ title, icon, ...rest }) => {
       <span>{icon({})}</span>
       <p>{title}</p>
     </Link>
+  );
+};
+
+export const ScrollTop: FC<IBtn> = props => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
+    !!props.onClick ? props.onClick(e) : null;
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <button {...props} onClick={handleClick} className={styles.scrollTop}>
+      <span>Наверх</span>
+
+      <IoArrowUp />
+    </button>
   );
 };
 

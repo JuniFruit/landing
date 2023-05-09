@@ -1,0 +1,21 @@
+.footer_wrapper {
+  @apply mx-auto flex flex-col  text-center gap-7 py-20;
+  max-width: 40rem;
+  > h3 {
+    @apply text-base uppercase leading-8 font-bold text-black;
+  }
+  > h4 {
+    @apply text-md uppercase font-bold;
+  }
+  > h5 {
+    @apply text-xs font-semibold;
+  }
+  > button {
+    @apply mx-auto;
+  }
+}
+
+.footer_container {
+  @apply mt-20;
+  background-color: var(--analagous-1);
+}

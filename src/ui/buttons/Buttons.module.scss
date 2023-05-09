@@ -78,3 +78,15 @@
     @apply opacity-100 w-full;
   }
 }
+
+.scrollTop {
+  @apply flex items-center font-semibold gap-1 transition-colors focus-visible:text-accent-600;
+
+  > svg {
+    @apply w-5 h-5;
+  }
+
+  @media (hover: hover) {
+    @apply hover:text-accent-600;
+  }
+}

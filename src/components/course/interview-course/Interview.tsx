@@ -8,7 +8,7 @@ import { IntermediateLevelInfo, ProLevelInfo, UnderLevelInfo } from "./CoursesIn
 const Interview: FC = () => {
   return (
     <section className={styles.course_container}>
-      <CourseImage src={IMG_LINKS.AVATAR} width={150} height={200} alt="IT английский" />
+      <CourseImage image={IMG_LINKS.AVATAR} aria-label="Подготовка к собеседованию" />
       <PaddingWrapper>
         <CourseHeading title="Подготовка к собеседованию" />
         <CourseIntro>

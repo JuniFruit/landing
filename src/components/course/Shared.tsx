@@ -3,7 +3,14 @@ import { ImgBg } from "@/ui/images/Images";
 import { getIntersectDefaultOpt } from "@/utils/general";
 import { FC, PropsWithChildren, useState } from "react";
 import { IoCaretDown, IoCaretUp, IoCheckmark } from "react-icons/io5";
-import { ICourseHeading, ICourseImage, ICoursePrice, IListItem } from "./Course.interface";
+import {
+  ICourseHeading,
+  ICourseImage,
+  ICourseLargeLayout,
+  ICoursePrice,
+  IFloatingBox,
+  IListItem,
+} from "./Course.interface";
 import styles from "./Course.module.scss";
 
 const CourseImage: FC<ICourseImage> = ({ image }) => {
@@ -68,6 +75,15 @@ const CoursePrice: FC<ICoursePrice> = ({ price, clarification }) => {
   );
 };
 
+const CourseFloatingBox: FC<PropsWithChildren<IFloatingBox>> = ({ courseImage, children }) => {
+  return (
+    <div className={styles.floating_box}>
+      {courseImage}
+      <div className={styles.floating_box_children}>{children}</div>
+    </div>
+  );
+};
+
 const CourseHeading: FC<ICourseHeading> = ({ title, ...rest }) => {
   return (
     <h1 {...rest} className={styles.course_heading}>
@@ -94,6 +110,15 @@ const CourseDescription: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
+const CourseLargeLayout: FC<ICourseLargeLayout> = ({ leftChildren, rightChildren }) => {
+  return (
+    <div className={styles.course_large_layout}>
+      <div>{leftChildren.map(child => child)}</div>
+      {rightChildren.map(child => child)}
+    </div>
+  );
+};
+
 const CourseParagraph: FC<PropsWithChildren> = ({ children }) => {
   return <p className={styles.course_p}>{children}</p>;
 };
@@ -108,4 +133,6 @@ export {
   Spoiler,
   CourseHeading,
   CourseParagraph,
+  CourseFloatingBox,
+  CourseLargeLayout,
 };

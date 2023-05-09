@@ -7,6 +7,14 @@ module.exports = {
     extend: {
       colors: {
         "bg-var1": "var(--bg-var1)",
+        complimentary: "var(--complimentary)",
+        "analagous-1": "var(--analagous-1)",
+        "analagous-2": "var(--analagous-2)",
+        "analagous-3": "var(--analagous-3)",
+        "analagous-4": "var(--analagous-4)",
+        "tetradic-1": "var(--tetradic-1)",
+        "tetradic-2": "var(--tetradic-2)",
+        "monochromatic-1": "var(--monochromatic-1)",
         accent: {
           600: "var(--accent-600)",
           500: "var(--accent-500)",
