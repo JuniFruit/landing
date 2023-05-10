@@ -32,9 +32,12 @@ function GeneralLargeLayout() {
         <PaddingWrapper>
           <CourseLargeLayout
             key="5"
-            leftChildren={[<GeneralCourseHeading />]}
+            leftChildren={[<GeneralCourseHeading key="heading" />]}
             rightChildren={[
-              <CourseFloatingBox courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}>
+              <CourseFloatingBox
+                key="floaing"
+                courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}
+              >
                 <GeneralCourseEnroll />
                 <GeneralCourseRequirements />
               </CourseFloatingBox>,
@@ -45,9 +48,15 @@ function GeneralLargeLayout() {
       <PaddingWrapper>
         <CourseLargeLayout
           key="3"
-          leftChildren={[<GeneralCourseLearn />, <GeneralCourseDescription />]}
+          leftChildren={[
+            <GeneralCourseLearn key="learn" />,
+            <GeneralCourseDescription key="generalDesc" />,
+          ]}
           rightChildren={[
-            <div style={{ width: "26rem", zIndex: -10, position: "relative" }}></div>,
+            <div
+              key="placeholder"
+              style={{ width: "26rem", zIndex: -10, position: "relative" }}
+            ></div>,
           ]}
         />
       </PaddingWrapper>
@@ -75,7 +84,7 @@ function GeneralMobile() {
 function GeneralCourseHeading() {
   return (
     <>
-      <CourseHeading title="Общий Английский" />
+      <CourseHeading title="Общий Английский" key={"General eng"} />
       <CourseIntro>
         Научись читать, говорить, слушать и мыслить на самом популярном международном языке в мире
       </CourseIntro>

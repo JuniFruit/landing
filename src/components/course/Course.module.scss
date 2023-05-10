@@ -9,6 +9,11 @@
     }
   }
 }
+.interview_course_container {
+  > div:last-child {
+    @apply z-10;
+  }
+}
 
 .img_container {
   @apply w-full overflow-hidden;

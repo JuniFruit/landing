@@ -33,8 +33,14 @@ const Reviews: FC = () => {
             <Phone>
               <div className={styles.review_images}>
                 {reviewsData.map(item => (
-                  <div className={styles.review_img_box}>
-                    <Image src={item.imgSrc} width={280} height={300} alt="Отзыв ученика" />
+                  <div className={styles.review_img_box} key={item.imgSrc}>
+                    <Image
+                      src={item.imgSrc}
+                      key={item.imgSrc}
+                      width={280}
+                      height={300}
+                      alt="Отзыв ученика"
+                    />
                   </div>
                 ))}
               </div>

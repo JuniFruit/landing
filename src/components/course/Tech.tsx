@@ -28,12 +28,15 @@ function TechLargeLayout() {
   return (
     <section className={styles.course_container}>
       <BlockWrapper className="bg-analagous-2 max-h-92">
-        <PaddingWrapper>
+        <PaddingWrapper key={"padding1"}>
           <CourseLargeLayout
-            key="0"
-            leftChildren={[<TechCourseHeading />]}
+            key="large1"
+            leftChildren={[<TechCourseHeading key={"heading"} />]}
             rightChildren={[
-              <CourseFloatingBox courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}>
+              <CourseFloatingBox
+                key={"floating"}
+                courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}
+              >
                 <TechCourseEnroll />
                 <TechCourseRequirements />
               </CourseFloatingBox>,
@@ -41,11 +44,14 @@ function TechLargeLayout() {
           />
         </PaddingWrapper>
       </BlockWrapper>
-      <PaddingWrapper>
+      <PaddingWrapper key={"padding2"}>
         <CourseLargeLayout
-          key="1"
-          leftChildren={[<TechCourseLearn />, <TechCourseDescription />]}
-          rightChildren={[<div style={{ width: "26rem" }}></div>]}
+          key="large2"
+          leftChildren={[
+            <TechCourseLearn key={"learn"} />,
+            <TechCourseDescription key={"description"} />,
+          ]}
+          rightChildren={[<div key="placeholder" style={{ width: "26rem" }}></div>]}
         />
       </PaddingWrapper>
     </section>
@@ -72,7 +78,7 @@ function TechMobile() {
 function TechCourseHeading() {
   return (
     <>
-      <CourseHeading title="IT Английский" />
+      <CourseHeading title="IT Английский" key={"IT Eng"} />
       <CourseIntro>
         Подойдет тем кто работает или еще учится в сфере айти и хочет трудоустроиться в
         международную компанию удаленно, релоцироваться и найти работу заграницей или же обучаться

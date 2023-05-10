@@ -1,13 +1,14 @@
 import Tech from "@/components/course/Tech";
 import Meta from "@/components/meta/Meta";
 import { IPageProps } from "@/types/types";
+import { IMG_LINKS } from "@/utils/general";
 import { NextPage } from "next";
 import React, { FC } from "react";
 
-const TechCourse: NextPage<IPageProps> = ({ title, description }) => {
+const TechCourse: NextPage<IPageProps> = ({ title, description, image }) => {
   return (
     <>
-      <Meta title={title} description={description} image="" />
+      <Meta title={title} description={description} image={image} />
       <Tech />
     </>
   );
@@ -16,8 +17,10 @@ const TechCourse: NextPage<IPageProps> = ({ title, description }) => {
 export const getStaticProps = () => {
   return {
     props: {
-      title: "IT английский",
-      description: "",
+      title: "Анна Русакова - уроки IT английского",
+      description:
+        "Описание программы созданной специально для IT специалистов, которые хотят устроится в международную компанию или же повышать квалификацию на зарубежных курсах.",
+      image: IMG_LINKS.HERO,
     },
   };
 };
