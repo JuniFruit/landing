@@ -13,7 +13,7 @@ import {
   Spoiler,
 } from "./Shared";
 import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
-import { EnrollBtn } from "@/ui/buttons/Buttons";
+import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 import { IMG_LINKS } from "@/utils/general";
 import styles from "./Course.module.scss";
 import { useIsMobile } from "@/hooks/useIsMobile";
@@ -100,6 +100,9 @@ function TechCourseLearn() {
   return (
     <BoxSolid>
       <CourseContents>
+        <h3 className="font-bold">
+          Cвободно общаться на следующие темы, используя продвинутую лексику:
+        </h3>
         <ul className={styles.course_contents_list}>
           {COURSE_CONTENTS.map(item => (
             <ListItem {...item} key={item.title} />
@@ -117,18 +120,37 @@ function TechCourseDescription() {
         <CourseParagraph>
           Занятия включают в себя не только основы английского языка, но и фокусируются на развитии
           навыков, необходимых для успешной карьеры в сфере IT, таких как письменная и устная
-          коммуникация, общение с коллегами и клиентами на английском языке
+          коммуникация, общение с коллегами и клиентами на английском языке.
         </CourseParagraph>
         <CourseParagraph>
-          За время прохождения программы вы гарантированно преодолеете языковой барьер, так как
-          одной из главных целей программы является развитие коммуникативных навыков.
+          Программа может редактироваться под индивидуальные запросы студента.
+        </CourseParagraph>
+        <CourseParagraph>
+          Грамматика, включенная в курс:
+          <ol className="flex flex-col gap-1 text-sm ml-5 my-3">
+            <li>Present simple</li>
+            <li>Present Continuous</li>
+            <li>Past Simple</li>
+            <li>Present Perfect</li>
+            <li>Future Simple</li>
+            <li>To be going to</li>
+            <li>Comparatives vs Superlatives</li>
+            <li>Quantifiers</li>
+            <li>Passive voice</li>
+            <li>Modal verbs</li>
+            <li>First and second conditional</li>
+            <li>Articles</li>
+            <li>Quantifiers</li>
+            <li>Quantifiers</li>
+          </ol>
+        </CourseParagraph>
+        <CourseParagraph>
+          За время прохождения программы вы <b>гарантированно преодолеете языковой барьер </b>, так
+          как одной из главных целей программы является развитие коммуникативных навыков.
         </CourseParagraph>
         <CourseParagraph>
           Весь материал размещен на интерактивной платформе, что позволяет сделать задания
-          максимально разнообразными.
-        </CourseParagraph>
-        <CourseParagraph>
-          Домашнее задание выполняется также на ней. подготовка к собеседованию{" "}
+          максимально разнообразными. Домашнее задание выполняется также на ней.
         </CourseParagraph>
       </div>
     </CourseDescription>
@@ -138,7 +160,12 @@ function TechCourseDescription() {
 function TechCourseRequirements() {
   return (
     <ol className={styles.requirements}>
-      <li>Необходим уверенный А2 или начальный В1 уровень </li>
+      <li>
+        {" "}
+        Необходимый уровень для старта уверенный А2-начальный В1 (программа также подойдет и для
+        более продвинутых уровней) проверить уровень можно{" "}
+        <ReferenceLink href="google.com">здесь</ReferenceLink>.
+      </li>
       <li>
         Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и
         подтверждения уровня.{" "}

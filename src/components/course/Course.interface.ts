@@ -30,3 +30,6 @@ export type ICourseLargeLayout = {
   leftChildren: JSX.Element[];
   rightChildren: JSX.Element[];
 };
+export type ICourseContents = {
+  heading?: string;
+};

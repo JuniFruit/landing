@@ -18,6 +18,7 @@ import { IMG_LINKS } from "@/utils/general";
 import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
 import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { IoCheckmark } from "react-icons/io5";
 
 const General: FC = () => {
   const { isLaptopSmall } = useIsMobile();
@@ -86,7 +87,7 @@ function GeneralCourseHeading() {
     <>
       <CourseHeading title="Общий Английский" key={"General eng"} />
       <CourseIntro>
-        Научись читать, говорить, слушать и мыслить на самом популярном международном языке в мире
+        Научись говорить, слушать и мыслить на самом популярном международном языке в мире.
       </CourseIntro>
     </>
   );
@@ -122,7 +123,7 @@ function GeneralCourseRequirements() {
       <ol className={styles.requirements}>
         <li>
           На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}
-          <ReferenceLink href="google.com">здесь</ReferenceLink>{" "}
+          <ReferenceLink href="google.com">здесь</ReferenceLink>.
         </li>
         <li>
           Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и
@@ -138,17 +139,26 @@ function GeneralCourseDescription() {
     <CourseDescription>
       <div className={styles.general_course_description}>
         <CourseParagraph>
-          В своей работе за основу я беру учебник, который подходит под ваш уровня\возраст\ цели.
+          Я преподаю английский используя communicative и student-oriented подходы.
         </CourseParagraph>
         <CourseParagraph>
-          Подбираю дополнительные материалы (видео\игры\статьи\рассказы).
+          В своей работе за основу я беру учебник, который подходит под ваш уровень\возраст\цели и
+          <span className="text-accent-600"> редактирую его под вас</span>.
         </CourseParagraph>
         <CourseParagraph>
-          Часто использую интерактивные платформы edvibe\wordwall\ и т.п.
+          Подбираю дополнительные аутентичные материалы (видео\игры\статьи\рассказы) и часто
+          использую интерактивные платформы edvibe\wordwall\ и т.п.
         </CourseParagraph>
         <CourseParagraph>
           Для большего погружения в язык мои ученики смотрят сериалы на английском с субтитрами и
           читают книги в оригинале.
+        </CourseParagraph>
+        <CourseParagraph>
+          Домашнее задание присылается мне заранее, поэтому на уроке мы не тратим время на проверку.
+        </CourseParagraph>
+        <CourseParagraph>
+          Я всегда открыта к предложениям/комментариям/изменениям со стороны студента и с
+          удовольствием подготовлю уроки на нужные вам темы.
         </CourseParagraph>
       </div>
     </CourseDescription>
@@ -160,12 +170,12 @@ export default General;
 var COURSE_CONTENTS = [
   {
     title: "Бегло говорить",
-    description: "Научу быстро и качественно говорить на уровне С1",
+    description: "Научу быстро и качественно говорить на продинутом уровне",
   },
   {
     title: "Воспринимать на слух",
     description:
-      "Объяснения на английском, видео материалы, задания на аудирование – все это поможет быстрее развить слух",
+      "Объяснения на английском, видео материалы, задания на аудирование – все это поможет быстро развить понимание на слух",
   },
   {
     title: "Использовать живые фразы",
@@ -181,8 +191,8 @@ var COURSE_CONTENTS = [
     description: "Обсуждаем последние новости в мире, делимся мнениями, следим за событиями",
   },
   {
-    title: "Смотреть фильмы",
+    title: "Смотреть фильмы и читать книги в оригинале",
     description:
-      "Учиться можно не только на уроке, просматривая фильмы ты быстрее осваиваешь новые слова и фразы",
+      "Учиться можно не только на уроке, как эффективно работать с аутентичными материалами - расскажу на бесплатной консультации",
   },
 ];

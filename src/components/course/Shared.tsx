@@ -4,6 +4,7 @@ import { getIntersectDefaultOpt } from "@/utils/general";
 import { FC, PropsWithChildren, useState } from "react";
 import { IoCaretDown, IoCaretUp, IoCheckmark } from "react-icons/io5";
 import {
+  ICourseContents,
   ICourseHeading,
   ICourseImage,
   ICourseLargeLayout,
@@ -92,10 +93,13 @@ const CourseHeading: FC<ICourseHeading> = ({ title, ...rest }) => {
   );
 };
 
-const CourseContents: FC<PropsWithChildren> = ({ children }) => {
+const CourseContents: FC<PropsWithChildren<ICourseContents>> = ({
+  children,
+  heading = "Чему научитесь",
+}) => {
   return (
     <div className={styles.contents}>
-      <h2>Чему научитесь</h2>
+      <h2>{heading}</h2>
       {children}
     </div>
   );
@@ -120,7 +124,7 @@ const CourseLargeLayout: FC<ICourseLargeLayout> = ({ leftChildren, rightChildren
 };
 
 const CourseParagraph: FC<PropsWithChildren> = ({ children }) => {
-  return <p className={styles.course_p}>{children}</p>;
+  return <div className={styles.course_p}>{children}</div>;
 };
 
 export {

@@ -8,10 +8,10 @@ const UnderLevelInfo: FC = () => {
   return (
     <PaddingWrapper>
       <div className={styles.general_course_description}>
-        <CourseParagraph>Если ваш уровень А1 и ниже.</CourseParagraph>
+        <CourseParagraph>Если ваш уровень А1 и ниже - </CourseParagraph>
         <CourseParagraph>
-          Вам еще рановато готовиться к собеседованию и следует подтянуть уровень общего
-          английского, напишите мне, я посоветую вам преподавателя из своей команды.
+          вам еще рановато готовиться к собеседованию и следует подтянуть уровень общего
+          английского. Напишите мне, я посоветую вам преподавателя из своей команды.
         </CourseParagraph>
       </div>
     </PaddingWrapper>
@@ -22,8 +22,7 @@ const IntermediateLevelInfo: FC = () => {
   return (
     <PaddingWrapper>
       <CourseParagraph>
-        Все полезные фишки по IT рекрутингу включены в программу. Я подстраиваюсь под пожелания и
-        цели каждого отдельного студента.
+        Я меняю и подстраиваю программу под пожелания и цели каждого отдельного студента.
       </CourseParagraph>
       <CoursePrice price={30} clarification="за 1 час индивидуального занятия" />
 
@@ -44,12 +43,15 @@ const IntermediateLevelInfo: FC = () => {
 const ProLevelInfo: FC = () => {
   return (
     <PaddingWrapper>
-      <CourseParagraph>Вам подойдет консультация-практикум. Длительность – 2 часа.</CourseParagraph>
+      <CourseParagraph>
+        Вам подойдет консультация-практикум. Длительность – 2 часа. Перед ее проведением я попрошу
+        вас заполнить анкету, чтобы подобрать для вас максимально релевантные материалы.
+      </CourseParagraph>
       <CoursePrice price={60} clarification="за 2 часа индивидуального занятия" />
 
       <EnrollBtn>Записаться</EnrollBtn>
       <BoxSolid>
-        <CourseContents>
+        <CourseContents heading="Что входит">
           <ul className={styles.course_contents_list}>
             {PRO_COURSE_CONTENTS.map(item => (
               <ListItem {...item} key={item.title} />
@@ -65,26 +67,27 @@ export { UnderLevelInfo, IntermediateLevelInfo, ProLevelInfo };
 
 var INTERMEDIATE_COURSE_CONTENTS = [
   {
-    title: "Basic vocabulary",
+    title: "Использовать Basic vocabulary в речи",
     description:
       "Тип занятости - casual work, flexible, nine to five, названия позиций и много другое",
   },
   {
-    title: "Phrasal verbs in business",
+    title: "Использовать Phrasal verbs in business",
     description: "Фразовые глаголы очень популярны среди носителей, особенно в рабочей среде",
   },
   {
     title: "Составлять Elevator pitch",
-    description: "",
+    description:
+      "Короткое выступление, в котором вы излагаете ключевые мысли. Например, кто вы, ваши прошлые достижения и цели на будущее",
   },
   {
     title: "Писать Cover letter",
-    description: "Темплейты для разных специалистов",
+    description: "У меня есть темплейты для разных специалистов",
   },
   {
     title: "Составлять резюме",
     description:
-      "Учимся составлять резюме и использовать классную лексику. Помощь с готовыми CV, которые я только проверяю и даю рекомендации по улучшению",
+      "Учимся составлять резюме и использовать классную лексику. Если ваше резюме уже готово - я проверю его и дам рекомендации по улучшению",
   },
   {
     title: "Отвечать на вопросы",
@@ -102,7 +105,7 @@ var INTERMEDIATE_COURSE_CONTENTS = [
       "Чтобы еще раз напомнить hr, что мы существуем и подтвердить нашу заинтересованность",
   },
   {
-    title: "Проходить тех. интервью",
+    title: "Проходить техническое интервью",
     description:
       "Практикуем максимально релевантные вопросы для каждого специалиста. На каждый вопрос у меня есть ответ и актуальные статьи",
   },
@@ -125,10 +128,11 @@ var PRO_COURSE_CONTENTS = [
   {
     title: "Mock interview",
     description:
-      "Проходим собеседование с 'подставного' интервьюером (IT специалист с хорошим английским). Делаем разбор ошибок",
+      "Проходим собеседование с 'подставным' интервьюером (IT специалист с хорошим английским). Делаем разбор ошибок (40 мин)",
   },
   {
     title: "CV",
-    description: "Проверка вашего резюме и сопроводительного письма, рекомендации по улучшению",
+    description:
+      "Проверка CV и сопроводительного письма я проверю его до начала консультации и дам рекомендации по улучшению",
   },
 ];

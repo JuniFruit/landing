@@ -1,6 +1,6 @@
 .course_container {
   @apply flex flex-col  gap-5;
-  @screen md {
+  @screen lg {
     > div:last-child {
       @apply -z-10;
       > * {

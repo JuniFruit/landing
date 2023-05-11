@@ -24,11 +24,7 @@ const Reviews: FC = () => {
               <h3>
                 которому можно <span>доверять</span>
               </h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
+              <p>Eще больше отзывов опубликовано в инстаграме в хайлате "FEEDBACK".</p>
             </div>
             <Phone>
               <div className={styles.review_images}>
