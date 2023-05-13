@@ -16,7 +16,7 @@ const GeneralCourse: NextPage<IPageProps> = ({ title, description, image }) => {
 export const getStaticProps = () => {
   return {
     props: {
-      title: "Анна Русакова - уроки общего английского",
+      title: "Уроки общего английского",
       description:
         "Подробная информация о занятиях общим английским. Описания занятий, программы и требований",
       image: IMG_LINKS.GENERAL_COURSE_PREVIEW,

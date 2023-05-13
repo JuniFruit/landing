@@ -17,7 +17,7 @@ const InterviewCourse: NextPage<IPageProps> = ({ title, description, image }) =>
 export const getStaticProps = () => {
   return {
     props: {
-      title: "Анна Русакова - подготовка к собеседованию в международную компанию",
+      title: "Подготовка к собеседованию в международную компанию",
       description:
         "Помощь в составлении резюме, тренировка на постановочных собеседованиях и увелечение шансов кандидата попасть в международную компанию",
       image: IMG_LINKS.INTERVIEW_PREVIEW,

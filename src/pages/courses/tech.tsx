@@ -16,7 +16,7 @@ const TechCourse: NextPage<IPageProps> = ({ title, description, image }) => {
 export const getStaticProps = () => {
   return {
     props: {
-      title: "Анна Русакова - уроки IT английского",
+      title: "Уроки IT английского",
       description:
         "Описание программы созданной специально для IT специалистов, которые хотят устроится в международную компанию или же повышать квалификацию на зарубежных курсах",
       image: IMG_LINKS.IT_COURSE_PREVIEW,
