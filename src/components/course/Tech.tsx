@@ -14,7 +14,7 @@ import {
 } from "./Shared";
 import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
 import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
-import { IMG_LINKS } from "@/utils/general";
+import { IMG_LINKS, SHARED_LINKS } from "@/utils/general";
 import styles from "./Course.module.scss";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -35,7 +35,7 @@ function TechLargeLayout() {
             rightChildren={[
               <CourseFloatingBox
                 key={"floating"}
-                courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}
+                courseImage={<CourseImage image={IMG_LINKS.IT_COURSE} />}
               >
                 <TechCourseEnroll />
                 <TechCourseRequirements />
@@ -61,7 +61,7 @@ function TechLargeLayout() {
 function TechMobile() {
   return (
     <section className={styles.course_container}>
-      <CourseImage image={IMG_LINKS.AVATAR} aria-label="IT английский" />
+      <CourseImage image={IMG_LINKS.IT_COURSE} aria-label="IT английский" />
       <PaddingWrapper>
         <TechCourseHeading />
         <TechCourseEnroll />
@@ -164,7 +164,7 @@ function TechCourseRequirements() {
         {" "}
         Необходимый уровень для старта уверенный А2-начальный В1 (программа также подойдет и для
         более продвинутых уровней) проверить уровень можно{" "}
-        <ReferenceLink href="google.com">здесь</ReferenceLink>.
+        <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
       </li>
       <li>
         Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и

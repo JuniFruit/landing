@@ -19,7 +19,7 @@ export const getStaticProps = () => {
       title: "Анна Русакова - уроки общего английского",
       description:
         "Подробная информация о занятиях общим английским. Описания занятий, программы и требований",
-      image: IMG_LINKS.AVATAR,
+      image: IMG_LINKS.GENERAL_COURSE_PREVIEW,
     },
   };
 };

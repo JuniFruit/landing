@@ -2,7 +2,7 @@ import { IconButton, NavLink, SocialLink } from "@/ui/buttons/Buttons";
 import { FC, MouseEventHandler, useRef } from "react";
 import { FaFlagUsa, FaHome, FaIdCard, FaKeyboard, FaTelegram } from "react-icons/fa";
 import styles from "./Header.module.scss";
-import { IoClose, IoLogoInstagram, IoLogoYoutube } from "react-icons/io5";
+import { IoClose, IoLogoInstagram, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 
 type INav = {
   onClickOutside?: () => void;
@@ -66,19 +66,24 @@ export const SocialLinks: FC = () => {
 
 var socialLinksData = [
   {
-    href: "https://google.com",
+    href: "https://www.instagram.com/annarus.eng/",
     icon: IoLogoInstagram,
     id: 0,
   },
   {
-    href: "https://google.com",
+    href: "https://t.me/annaruseng",
     icon: FaTelegram,
     id: 1,
   },
   {
-    href: "https://google.com",
+    href: "https://www.youtube.com/@annarus.ITenglish/featured",
     icon: IoLogoYoutube,
     id: 2,
+  },
+  {
+    href: "https://www.linkedin.com/in/annarusakova/",
+    icon: IoLogoLinkedin,
+    id: 3,
   },
 ];
 

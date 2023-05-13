@@ -29,11 +29,11 @@ const ReferenceLink: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }
   );
 };
 
-const EnrollBtn: FC<PropsWithChildren<IBtn>> = ({ children, ...rest }) => {
+const EnrollBtn: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }) => {
   return (
-    <button className={styles.enroll} {...rest}>
+    <a {...rest} href="https://t.me/aniutarus" target="_blank" className={styles.enroll}>
       {children}
-    </button>
+    </a>
   );
 };
 

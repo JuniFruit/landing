@@ -8,9 +8,9 @@ const HeroImg = () => {
   const { isMobile } = useIsMobile();
   return (
     <div className={styles.hero_img_container}>
-      <ImgBg className={styles.hero_img} aria-label="Анна Русакова" imgSrc={IMG_LINKS.HERO} />
+      <ImgBg className={styles.hero_img} aria-label="Анна Русакова" imgSrc={IMG_LINKS.HERO_SPLIT} />
       {!isMobile ? (
-        <ImgBg className={styles.hero_img} aria-label="Анна Русакова" imgSrc={IMG_LINKS.AVATAR} />
+        <ImgBg className={styles.hero_img} aria-label="Анна Русакова" imgSrc={IMG_LINKS.HERO} />
       ) : null}
     </div>
   );
@@ -24,8 +24,8 @@ const Hero: FC = () => {
           <div className={styles.heading}>
             <h1>Анна Русакова преподаватель общего и IT английского</h1>
             <p>
-              Моя цель - помочь студентам преодолеть языковой барьер, достигнуть своих целей и стать
-              частью международного айти сообщества.
+              моя цель - помочь студентам преодолеть языковой барьер, достигнуть своих целей и стать
+              частью международного айти сообщества
             </p>
           </div>
         </div>

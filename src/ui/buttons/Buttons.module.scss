@@ -5,7 +5,7 @@
     @apply hover:opacity-100 hover:text-accent-400;
   }
   &:focus-visible {
-    @apply hover:opacity-100 hover:text-accent-400;
+    @apply opacity-100 text-accent-400;
   }
 }
 
@@ -13,10 +13,10 @@
   @apply rounded-lg h-8 w-8  transition-all duration-300;
 
   @media (hover: hover) {
-    @apply hover:text-text-main-200;
+    @apply hover:text-accent-600;
   }
   &:focus-visible {
-    @apply hover:text-text-main-200;
+    @apply text-accent-600;
   }
 }
 
@@ -32,7 +32,7 @@
 }
 
 .enroll {
-  @apply transition-all bg-accent-600 px-1 py-3 text-base font-bold duration-300 text-white;
+  @apply transition-all text-center bg-accent-600 px-1 py-3 text-base font-bold duration-300 text-white;
 
   @media (hover: hover) {
     @apply hover:bg-black hover:text-accent-600;

@@ -3,7 +3,6 @@ import Meta from "@/components/meta/Meta";
 import { IPageProps } from "@/types/types";
 import { IMG_LINKS } from "@/utils/general";
 import { NextPage } from "next";
-import React, { FC } from "react";
 
 const TechCourse: NextPage<IPageProps> = ({ title, description, image }) => {
   return (
@@ -19,8 +18,8 @@ export const getStaticProps = () => {
     props: {
       title: "Анна Русакова - уроки IT английского",
       description:
-        "Описание программы созданной специально для IT специалистов, которые хотят устроится в международную компанию или же повышать квалификацию на зарубежных курсах.",
-      image: IMG_LINKS.HERO,
+        "Описание программы созданной специально для IT специалистов, которые хотят устроится в международную компанию или же повышать квалификацию на зарубежных курсах",
+      image: IMG_LINKS.IT_COURSE_PREVIEW,
     },
   };
 };

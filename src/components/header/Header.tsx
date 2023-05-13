@@ -49,11 +49,12 @@ function HeaderContents() {
     <>
       <Link
         href="/"
+        className="focus-visible:border-accent-600 border rounded-full"
         aria-label="На главную"
         title="На главную"
         onClick={() => window.scrollTo(0, 0)}
       >
-        <Avatar imgSrc={IMG_LINKS.AVATAR} aria-label="Анна Русакова" />
+        <Avatar imgSrc={IMG_LINKS.LOGO} aria-label="Анна Русакова" />
       </Link>
       <div ref={ref}>
         <IconButton

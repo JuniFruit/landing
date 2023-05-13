@@ -13,7 +13,7 @@ const Footer: FC = () => {
           <SocialLinks />
           <p>
             По всем вопросам пишите в{" "}
-            <ReferenceLink href={"https://www.google.com"}> Telegram </ReferenceLink>
+            <ReferenceLink href={"https://t.me/aniutarus"}> Telegram </ReferenceLink>
           </p>
           <h4>Aнна Русакова</h4>
           <h5>преподаватель английского с 3-х летним опытом</h5>

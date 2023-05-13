@@ -37,12 +37,22 @@
   @apply relative flex items-center;
   .hero_img {
     @apply w-full relative mx-auto overflow-hidden;
-    /* background-image: url("https://thumb.tildacdn.com/tild3231-6531-4539-a466-643736393235/-/format/webp/3_copy.jpg"); */
-    background-image: url("/static/images/hero.jpg");
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 35rem;
+    @screen sm {
+      background-position: 70% 70%;
+    }
+    @screen md {
+      height: 35rem;
+      background-position: 70% 70%;
+    }
+    @screen lg {
+      background-position: 60% 60%;
+      /* height: 40rem; */
+    }
   }
 
   &::before {

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import styles from "./Course.module.scss";
 import {
   CourseContents,
@@ -14,11 +14,10 @@ import {
   Spoiler,
 } from "./Shared";
 
-import { IMG_LINKS } from "@/utils/general";
-import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
-import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { IoCheckmark } from "react-icons/io5";
+import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
+import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
+import { IMG_LINKS, SHARED_LINKS } from "@/utils/general";
 
 const General: FC = () => {
   const { isLaptopSmall } = useIsMobile();
@@ -37,7 +36,7 @@ function GeneralLargeLayout() {
             rightChildren={[
               <CourseFloatingBox
                 key="floaing"
-                courseImage={<CourseImage image={IMG_LINKS.AVATAR} />}
+                courseImage={<CourseImage image={IMG_LINKS.GENERAL_COURSE} />}
               >
                 <GeneralCourseEnroll />
                 <GeneralCourseRequirements />
@@ -68,7 +67,7 @@ function GeneralLargeLayout() {
 function GeneralMobile() {
   return (
     <section className={styles.course_container}>
-      <CourseImage image={IMG_LINKS.AVATAR} />
+      <CourseImage image={IMG_LINKS.GENERAL_COURSE} />
       <PaddingWrapper>
         <GeneralCourseHeading />
         <GeneralCourseEnroll />
@@ -123,7 +122,7 @@ function GeneralCourseRequirements() {
       <ol className={styles.requirements}>
         <li>
           На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}
-          <ReferenceLink href="google.com">здесь</ReferenceLink>.
+          <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
         </li>
         <li>
           Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и

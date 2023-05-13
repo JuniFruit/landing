@@ -41,6 +41,7 @@ const Meta: FC<IMeta> = ({ title, description = "", image, type = "webpage" }) =
               content="Aнна Русакова - преподаватель английского языка"
             />
             <meta name="twitter:image:alt" content="Уроки английского" />
+            <meta name="theme-color" content="#fbf2e1"></meta>
             <meta name="msapplication-navbutton-color" content="#fbf2e1" />
             <meta name="apple-mobile-web-app-status-bar-style" content="#fbf2e1" />
             <link rel="apple-touch-icon" href="/favicon.ico" />
