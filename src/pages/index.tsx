@@ -25,7 +25,7 @@ export const getStaticProps = () => {
       title: "Анна Русакова",
       description:
         "Продвинутые уроки общего и IT английского языка, подготовка к собеседованию в международной компании. Помощь в составлении резюме и многое другое.",
-      image: IMG_LINKS.LOGO,
+      image: IMG_LINKS.PREVIEW,
     },
   };
 };
