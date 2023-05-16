@@ -50,7 +50,7 @@ module.exports = {
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },
-          "100%": { opactiy: "1" },
+          "100%": { opacity: 1 },
         },
         scaleIn: {
           "0%": {

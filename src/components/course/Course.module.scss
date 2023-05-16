@@ -1,5 +1,7 @@
 .course_container {
-  @apply flex flex-col  gap-5;
+  @apply flex flex-col opacity-0 gap-5 animate-fadeIn;
+  animation-fill-mode: forwards;
+  animation-delay: 0.35s;
   @screen lg {
     > div:last-child {
       @apply -z-10;
@@ -99,15 +101,17 @@
   @apply text-xs font-bold my-5 opacity-0 animate-slideInBottom;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-delay: 1.5s;
+  animation-delay: 1.7s;
   @screen md {
     @apply text-md;
   }
 }
 
 .price {
-  @apply flex flex-col gap-2 py-2 animate-fadeIn;
+  @apply flex flex-col opacity-0 gap-2 py-2 animate-fadeIn;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
 
   > span {
     @apply text-accent-500 text-4xl font-bold;

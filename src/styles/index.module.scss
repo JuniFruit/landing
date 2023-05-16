@@ -1,0 +1,5 @@
+.main_page {
+  @apply opacity-0 animate-fadeIn;
+  animation-delay: 0.35s;
+  animation-fill-mode: forwards;
+}

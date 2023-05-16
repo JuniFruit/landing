@@ -12,8 +12,8 @@ export const useIntersect = ({ onIntersect, options, isOnce = false }: IUseInter
   const ref = useRef<any>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
     const observer = new IntersectionObserver(entries => {
+      if (!ref.current) return;
       entries.forEach(entry => {
         setIsInersecting(entry.isIntersecting);
         if (entry.isIntersecting && !!onIntersect) onIntersect(entry);

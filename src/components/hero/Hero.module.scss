@@ -15,13 +15,13 @@
           letter-spacing: 0.08rem;
           animation-fill-mode: forwards;
           animation-duration: 1s;
-          animation-delay: 0.8s;
+          animation-delay: 1s;
         }
         > p {
           @apply text-sm text-main-200 font-bold opacity-0 animate-slideInBottom;
           animation-fill-mode: forwards;
           animation-duration: 1s;
-          animation-delay: 1.2s;
+          animation-delay: 1.5s;
         }
 
         @screen sm {
