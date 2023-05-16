@@ -19,9 +19,9 @@ const Phone: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={styles.phone_wrapper}>
       <div className={styles.phone_header}>
-        <p>English time</p>
+        <p>annarus.eng</p>
         <div className={styles.phone_curtain}></div>
-        <p>@annarus</p>
+        <p>feedback</p>
       </div>
       <div className={styles.phone_children_container}>
         {children}

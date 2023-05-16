@@ -101,7 +101,7 @@
   @apply text-xs font-bold my-5 opacity-0 animate-slideInBottom;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-delay: 1.7s;
+  animation-delay: 1.3s;
   @screen md {
     @apply text-md;
   }
@@ -111,7 +111,7 @@
   @apply flex flex-col opacity-0 gap-2 py-2 animate-fadeIn;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 1.3s;
 
   > span {
     @apply text-accent-500 text-4xl font-bold;
