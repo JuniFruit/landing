@@ -31,7 +31,7 @@ const Interview: FC = () => {
           <Spoiler title="Для А2-B1">
             <IntermediateLevelInfo />
           </Spoiler>
-          <Spoiler title="Для B1 и выше">
+          <Spoiler title="Для B2 и выше">
             <ProLevelInfo />
           </Spoiler>
         </div>
