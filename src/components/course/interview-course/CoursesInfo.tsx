@@ -24,7 +24,7 @@ const IntermediateLevelInfo: FC = () => {
       <CourseParagraph>
         Я меняю и подстраиваю программу под пожелания и цели каждого отдельного студента.
       </CourseParagraph>
-      <CoursePrice price={30} clarification="за 1 час индивидуального занятия" />
+      <CoursePrice price={2500} clarification="за 1 час индивидуального занятия" />
 
       <EnrollBtn>Записаться</EnrollBtn>
       <BoxSolid>
@@ -47,7 +47,7 @@ const ProLevelInfo: FC = () => {
         Вам подойдет консультация-практикум. Длительность – 2 часа. Перед ее проведением я попрошу
         вас заполнить анкету, чтобы подобрать для вас максимально релевантные материалы.
       </CourseParagraph>
-      <CoursePrice price={60} clarification="за 2 часа индивидуального занятия" />
+      <CoursePrice price={5000} clarification="за 2 часа индивидуального занятия" />
 
       <EnrollBtn>Записаться</EnrollBtn>
       <BoxSolid>

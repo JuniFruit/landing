@@ -63,14 +63,14 @@ const Spoiler: FC<PropsWithChildren<{ title: string; isInitOpen?: boolean }>> = 
 };
 
 const CoursePrice: FC<ICoursePrice> = ({ price, clarification }) => {
-  const formater = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
+  const formater = new Intl.NumberFormat("ru-RU", {
+    style: "decimal",
+    currency: "RUB",
   });
 
   return (
     <div className={styles.price}>
-      <span>{formater.format(price)}</span>
+      <span>{formater.format(price)} ₽</span>
       <p>{clarification}</p>
     </div>
   );

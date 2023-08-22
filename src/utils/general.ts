@@ -14,6 +14,7 @@ export const IMG_LINKS = {
   GENERAL_COURSE_PREVIEW: "/static/images/general_course_preview.png",
   IT_COURSE_PREVIEW: "/static/images/it_course_preview.png",
   INTERVIEW_PREVIEW: "/static/images/interview_preview.png",
+  GROUP_COURSE: "/static/images/italk.png",
 };
 
 export const SHARED_LINKS = {

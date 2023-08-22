@@ -1,6 +1,13 @@
 import { IconButton, NavLink, SocialLink } from "@/ui/buttons/Buttons";
 import { FC, MouseEventHandler, useRef } from "react";
-import { FaFlagUsa, FaHome, FaIdCard, FaKeyboard, FaTelegram } from "react-icons/fa";
+import {
+  FaFlagUsa,
+  FaHome,
+  FaIdCard,
+  FaKeyboard,
+  FaTelegram,
+  FaMicrophoneAlt,
+} from "react-icons/fa";
 import styles from "./Header.module.scss";
 import { IoClose, IoLogoInstagram, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 
@@ -48,6 +55,7 @@ var navData = [
   { title: "Общий английский", href: "/courses/general", icon: FaFlagUsa },
   { title: "IT английский", href: "/courses/tech", icon: FaKeyboard },
   { title: "Подготовка к собеседованию", href: "/courses/interview", icon: FaIdCard },
+  { title: "Курс ITalk", href: "/courses/group", icon: FaMicrophoneAlt },
 ];
 
 export const SocialLinks: FC = () => {

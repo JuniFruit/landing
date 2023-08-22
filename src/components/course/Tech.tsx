@@ -15,6 +15,7 @@ import {
 import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
 import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 import { IMG_LINKS, SHARED_LINKS } from "@/utils/general";
+import { AiTwotonePushpin as IoPin } from "react-icons/ai";
 import styles from "./Course.module.scss";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -90,7 +91,7 @@ function TechCourseHeading() {
 function TechCourseEnroll() {
   return (
     <>
-      <CoursePrice price={30} clarification="за 1 час индивидуального занятия" />
+      <CoursePrice price={3000} clarification="за 1 час индивидуального занятия" />
       <EnrollBtn>Записаться</EnrollBtn>
     </>
   );
@@ -126,23 +127,15 @@ function TechCourseDescription() {
           Программа может редактироваться под индивидуальные запросы студента.
         </CourseParagraph>
         <CourseParagraph>
-          Грамматика, включенная в курс:
-          <ol className="flex flex-col gap-1 text-sm ml-5 my-3">
-            <li>Present simple</li>
-            <li>Present Continuous</li>
-            <li>Past Simple</li>
-            <li>Present Perfect</li>
-            <li>Future Simple</li>
-            <li>To be going to</li>
-            <li>Comparatives vs Superlatives</li>
-            <li>Quantifiers</li>
-            <li>Passive voice</li>
-            <li>Modal verbs</li>
-            <li>First and second conditional</li>
-            <li>Articles</li>
-            <li>Quantifiers</li>
-            <li>Quantifiers</li>
-          </ol>
+          <h3 className="my-3">Грамматика, включенная в курс:</h3>
+          <ul className={styles.general_course_description_bulletpoints}>
+            {COURSE_DESC_BP.map(item => (
+              <li key={item.title}>
+                <span>{item.icon({})}</span>
+                {item.title}
+              </li>
+            ))}
+          </ul>
         </CourseParagraph>
         <CourseParagraph>
           За время прохождения программы вы <b>гарантированно преодолеете языковой барьер </b>, так
@@ -228,5 +221,56 @@ var COURSE_CONTENTS = [
   {
     title: "Communication at workplace",
     description: "",
+  },
+];
+
+var COURSE_DESC_BP = [
+  {
+    title: "Present simple",
+    icon: IoPin,
+  },
+  {
+    title: "Present Continuous",
+    icon: IoPin,
+  },
+  {
+    title: "Past Simple",
+    icon: IoPin,
+  },
+  {
+    title: "Present Perfect",
+    icon: IoPin,
+  },
+  {
+    title: "Future Simple",
+    icon: IoPin,
+  },
+  {
+    title: "To be going to",
+    icon: IoPin,
+  },
+  {
+    title: "Comparatives vs Superlatives",
+    icon: IoPin,
+  },
+  {
+    title: "Quantifiers",
+    icon: IoPin,
+  },
+  {
+    title: "Passive voice",
+    icon: IoPin,
+  },
+  {
+    title: "Modal verbs",
+    icon: IoPin,
+  },
+  {
+    title: "First and second conditional",
+    icon: IoPin,
+  },
+  {
+    title: "Articles",
+    icon: IoPin,
   },
 ];

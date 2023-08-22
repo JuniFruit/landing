@@ -32,7 +32,7 @@
 .list_container {
   @apply opacity-0 flex gap-2 items-center w-full;
   > svg {
-    @apply w-4 h-4;
+    @apply w-4 h-4 text-accent-300;
   }
   > div {
     width: 80%;
@@ -98,7 +98,7 @@
 }
 
 .course_intro {
-  @apply text-xs font-bold my-5 opacity-0 animate-slideInBottom;
+  @apply text-xs font-bold my-5 opacity-0 animate-slideInBottom leading-7;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.3s;
@@ -156,5 +156,19 @@
   > *:first-child {
     @apply flex flex-col gap-5;
     max-width: 63%;
+  }
+}
+
+.general_course_description_bulletpoints {
+  @apply flex flex-col gap-4;
+
+  > li {
+    @apply flex items-center gap-2;
+    > span {
+      @apply w-4 h-4;
+      > svg {
+        @apply w-4 h-4 text-accent-300;
+      }
+    }
   }
 }

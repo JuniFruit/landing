@@ -95,8 +95,8 @@ function GeneralCourseHeading() {
 function GeneralCourseEnroll() {
   return (
     <>
-      <CoursePrice price={25} clarification="за 1 час индивидуального занятия" />
-      <CoursePrice price={20} clarification="за 1 час занятия в паре" />
+      <CoursePrice price={2500} clarification="за 1 час индивидуального занятия" />
+      <CoursePrice price={1700} clarification="за 1 час занятия в паре" />
       <EnrollBtn>Записаться</EnrollBtn>
     </>
   );
