@@ -135,7 +135,7 @@ function GroupCourseDescription() {
                 <strong>длительность:</strong> 4 месяца
               </li>
               <li>
-                <strong>старт:</strong> начало сентября
+                <strong>старт:</strong> 12 сентября
               </li>
             </ul>
           </CourseParagraph>
