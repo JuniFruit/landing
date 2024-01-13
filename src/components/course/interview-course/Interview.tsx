@@ -16,7 +16,7 @@ const Interview: FC = () => {
         image={isMobile ? IMG_LINKS.INTERVIEW_COURSE_MOBILE : IMG_LINKS.INTERVIEW_COURSE}
         aria-label="Подготовка к собеседованию"
       />
-      <PaddingWrapper>
+      <PaddingWrapper className={'px-0'}>
         <CourseHeading title="Подготовка к собеседованию" />
         <CourseIntro>
           Пошаговый план к получению работы в зарубежной компании. Ниже подробности для каждого
@@ -25,7 +25,7 @@ const Interview: FC = () => {
         </CourseIntro>
 
         <div className={styles.interview_course_spoilers}>
-          <Spoiler title="Для А1">
+          {/* <Spoiler title="Для А1">
             <UnderLevelInfo />
           </Spoiler>
           <Spoiler title="Для А2-B1">
@@ -33,7 +33,9 @@ const Interview: FC = () => {
           </Spoiler>
           <Spoiler title="Для B2 и выше">
             <ProLevelInfo />
-          </Spoiler>
+          </Spoiler> */}
+
+          <ProLevelInfo />
         </div>
       </PaddingWrapper>
     </section>

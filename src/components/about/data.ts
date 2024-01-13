@@ -4,7 +4,7 @@ export const data = [
   {
     title: "Опыт",
     description:
-      "Обучаю уже более 3-х лет, половину из которых специализируюсь на преподавании IT английского",
+      "Обучаю уже более 4-х лет, половину из которых специализируюсь на преподавании IT английского и подготовке к собеседованию",
     icon: GiScrollUnfurled,
     color: "",
   },
@@ -23,7 +23,7 @@ export const data = [
   },
   {
     title: "Technical Recruiter",
-    description: "Окончила курс IT Basics for Technical Recruiters",
+    description: "Окончила курсы IT Basics for Technical Recruiters, Tech Recruitment, Technical Recruiting etc.",
     icon: GiNewspaper,
     color: "",
   },

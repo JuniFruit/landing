@@ -52,9 +52,14 @@
 
 .course_heading {
   @apply text-3xl font-bold text-text-main-600 leading-10 opacity-0 animate-slideInBottom;
+
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
+  @screen md {
+    @apply text-5xl;
+    line-height: 3.5rem;
+  }
 }
 
 .contents {
@@ -98,7 +103,7 @@
 }
 
 .course_intro {
-  @apply text-xs font-bold my-5 opacity-0 animate-slideInBottom leading-7;
+  @apply text-xs font-medium my-8 opacity-0 animate-slideInBottom leading-7;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.3s;

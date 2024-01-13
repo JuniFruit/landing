@@ -93,7 +93,7 @@ function GroupCourseHeading() {
 function GroupCourseEnroll() {
   return (
     <>
-      <CoursePrice price={12000} clarification="в месяц" />
+      <CoursePrice price={120} clarification="в месяц" />
       <EnrollBtn>Записаться</EnrollBtn>
     </>
   );
@@ -122,36 +122,33 @@ function GroupCourseLearn() {
 
 function GroupCourseDescription() {
   return (
-    <CourseDescription>
-      <div className={styles.general_course_description}>
-        <BoxSolid>
-          <CourseParagraph>
-            <ul className="font-medium flex flex-col gap-2">
-              <li>
-                <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в мини-группе (по 4
-                человека)
-              </li>
-              <li>
-                <strong>длительность:</strong> 4 месяца
-              </li>
-              <li>
-                <strong>старт:</strong> 12 сентября
-              </li>
-            </ul>
-          </CourseParagraph>
-        </BoxSolid>
+    <div className={styles.general_course_description}>
+      <BoxSolid>
         <CourseParagraph>
-          <ul className={styles.general_course_description_bulletpoints}>
-            {COURSE_DESC_BP.map(item => (
-              <li key={item.title}>
-                <span>{item.icon({})}</span>
-                {item.title}
-              </li>
-            ))}
+          <ul className="font-medium flex flex-col gap-2">
+            <li>
+              <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в мини-группе (до 6 человек)
+            </li>
+            <li>
+              <strong>длительность:</strong> 4 месяца
+            </li>
+            <li>
+              <strong>старт:</strong> 13-14 февраля
+            </li>
           </ul>
         </CourseParagraph>
-      </div>
-    </CourseDescription>
+      </BoxSolid>
+      <CourseParagraph>
+        <ul className={styles.general_course_description_bulletpoints}>
+          {COURSE_DESC_BP.map(item => (
+            <li key={item.title}>
+              <span>{item.icon({})}</span>
+              {item.title}
+            </li>
+          ))}
+        </ul>
+      </CourseParagraph>
+    </div>
   );
 }
 
@@ -161,7 +158,7 @@ function GroupCourseRequirements() {
       <li>
         {" "}
         Необходимый уровень для старта уверенный А2-начальный В1 (программа также подойдет и для
-        более продвинутых уровней) проверить уровень можно{" "}
+        более продвинутых уровней). Проверить уровень можно{" "}
         <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
       </li>
       <li>
@@ -196,6 +193,11 @@ var COURSE_DESC_BP = [
   },
   {
     title: "Научимся грамотно выражать свои мысли и общаться с коллегами и клиентами",
+    icon: IoPin,
+  },
+  {
+    title:
+      "Составим актуальное резюме, напишем cover & follow up letters, подготовимся к собеседованию",
     icon: IoPin,
   },
 ];

@@ -1,4 +1,3 @@
-import Tech from "@/components/course/Tech";
 import Meta from "@/components/meta/Meta";
 import { IPageProps } from "@/types/types";
 import { IMG_LINKS } from "@/utils/general";
@@ -8,7 +7,7 @@ const TechCourse: NextPage<IPageProps> = ({ title, description, image }) => {
   return (
     <>
       <Meta title={title} description={description} image={image} />
-      <Tech />
+      {/* <Tech /> */}
     </>
   );
 };

@@ -2,7 +2,6 @@ import { FC } from "react";
 import styles from "./Course.module.scss";
 import {
   CourseContents,
-  CourseDescription,
   CourseFloatingBox,
   CourseHeading,
   CourseImage,
@@ -11,7 +10,7 @@ import {
   CourseParagraph,
   CoursePrice,
   ListItem,
-  Spoiler,
+  Spoiler
 } from "./Shared";
 
 import { useIsMobile } from "@/hooks/useIsMobile";
@@ -95,8 +94,7 @@ function GeneralCourseHeading() {
 function GeneralCourseEnroll() {
   return (
     <>
-      <CoursePrice price={2500} clarification="за 1 час индивидуального занятия" />
-      <CoursePrice price={1700} clarification="за 1 час занятия в паре" />
+      <CoursePrice price={13} clarification="за урок с человека" />
       <EnrollBtn>Записаться</EnrollBtn>
     </>
   );
@@ -104,15 +102,32 @@ function GeneralCourseEnroll() {
 
 function GeneralCourseLearn() {
   return (
-    <BoxSolid>
-      <CourseContents>
-        <ul className={styles.course_contents_list}>
-          {COURSE_CONTENTS.map(item => (
-            <ListItem {...item} key={item.title} />
-          ))}
-        </ul>
-      </CourseContents>
-    </BoxSolid>
+    <div className={styles.general_course_description}>
+      <BoxSolid>
+        <CourseParagraph>
+          <ul className="font-medium flex flex-col gap-2">
+            <li>
+              <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в мини-группе (до 6 человек)
+            </li>
+            <li>
+              <strong>длительность:</strong> 4 месяца
+            </li>
+            <li>
+              <strong>старт:</strong> 13-14 февраля
+            </li>
+          </ul>
+        </CourseParagraph>
+      </BoxSolid>
+      <BoxSolid>
+        <CourseContents>
+          <ul className={styles.course_contents_list}>
+            {COURSE_CONTENTS.map(item => (
+              <ListItem {...item} key={item.title} />
+            ))}
+          </ul>
+        </CourseContents>
+      </BoxSolid>
+    </div>
   );
 }
 
@@ -121,7 +136,7 @@ function GeneralCourseRequirements() {
     <>
       <ol className={styles.requirements}>
         <li>
-          На данный момент я работаю только с уровнями А2 и выше. Проверить свой уровень можно{" "}
+          На данный момент идет набор в группы уровней А2, В1 и В1+. Проверить свой уровень можно{" "}
           <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
         </li>
         <li>
@@ -135,32 +150,14 @@ function GeneralCourseRequirements() {
 
 function GeneralCourseDescription() {
   return (
-    <CourseDescription>
-      <div className={styles.general_course_description}>
-        <CourseParagraph>
-          Я преподаю английский используя communicative и student-oriented подходы.
-        </CourseParagraph>
-        <CourseParagraph>
-          В своей работе за основу я беру учебник, который подходит под ваш уровень\возраст\цели и
-          <span className="text-accent-600"> редактирую его под вас</span>.
-        </CourseParagraph>
-        <CourseParagraph>
-          Подбираю дополнительные аутентичные материалы (видео\игры\статьи\рассказы) и часто
-          использую интерактивные платформы edvibe\wordwall\ и т.п.
-        </CourseParagraph>
-        <CourseParagraph>
-          Для большего погружения в язык мои ученики смотрят сериалы на английском с субтитрами и
-          читают книги в оригинале.
-        </CourseParagraph>
-        <CourseParagraph>
-          Домашнее задание присылается мне заранее, поэтому на уроке мы не тратим время на проверку.
-        </CourseParagraph>
-        <CourseParagraph>
-          Я всегда открыта к предложениям/комментариям/изменениям со стороны студента и с
-          удовольствием подготовлю уроки на нужные вам темы.
-        </CourseParagraph>
-      </div>
-    </CourseDescription>
+    <CourseParagraph>
+      <p className="font-medium">
+        Весь материал размещен на интерактивной платформе, доступ к которой предоставляется 24/7.
+        Домашнее задание также размещено на платформе, тестовые упражнения проверяются
+        автоматически, а задания на письмо и говорение присылаются в телеграме и проверяются лично
+        мной.
+      </p>
+    </CourseParagraph>
   );
 }
 
@@ -169,7 +166,7 @@ export default General;
 var COURSE_CONTENTS = [
   {
     title: "Бегло говорить",
-    description: "Научу быстро и качественно говорить на продинутом уровне",
+    description: "Научимся грамотно формулировать свои мысли и преодолеем языковой барьер",
   },
   {
     title: "Воспринимать на слух",
@@ -183,7 +180,8 @@ var COURSE_CONTENTS = [
   },
   {
     title: "Понимать культуру",
-    description: "Вместе с языком, вы научитесь понимать культуру страны и особенности ее жителей",
+    description:
+      "Вместе с языком, вы научитесь понимать культуру англоговорящих стран и особенности ее жителей",
   },
   {
     title: "Быть в курсе событий",

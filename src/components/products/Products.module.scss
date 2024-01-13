@@ -7,7 +7,7 @@
   @screen md {
     @apply flex-row;
     > div:first-child {
-      @apply w-1/2;
+      @apply w-full;
     }
     > div:nth-child(2) {
       flex-grow: 1;

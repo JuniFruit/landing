@@ -30,7 +30,7 @@ const Products: FC = () => {
             <div className={styles.product_heading}>
               <SectionHeading>Курс ITalk - английский для IT (в мини-группах)</SectionHeading>
               <h3>
-                Для уровней <span>A2 и выше</span>
+                Для уровней <span>A2+ и выше</span>
               </h3>
             </div>
             <p>
@@ -76,7 +76,7 @@ const Products: FC = () => {
                 </h3>
               </div>
               <p>
-                Я структурирую материал таким образом, чтобы студент как можно быстрее достиг целей
+                Материал структурирован таким образом, чтобы студент как можно быстрее достиг целей
                 и мог эффективно использовать полученные знания самостоятельно.
               </p>
             </div>
@@ -85,7 +85,7 @@ const Products: FC = () => {
             </div>
           </PaddingWrapper>
         </BlockWrapper>
-        <BlockWrapper className={styles.it_english_wrapper}>
+        {/* <BlockWrapper className={styles.it_english_wrapper}>
           <PaddingWrapper>
             <div className={styles.it_body_container}>
               <div className={styles.product_heading}>
@@ -104,7 +104,7 @@ const Products: FC = () => {
               <CourseLink {...data[1]} />
             </div>
           </PaddingWrapper>
-        </BlockWrapper>
+        </BlockWrapper> */}
       </div>
 
       <BlockWrapper className={styles.interview_wrapper}>

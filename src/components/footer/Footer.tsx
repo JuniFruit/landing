@@ -16,7 +16,7 @@ const Footer: FC = () => {
             <ReferenceLink href={"https://t.me/aniutarus"}> Telegram </ReferenceLink>
           </p>
           <h4>Aнна Русакова</h4>
-          <h5>преподаватель английского с 3-х летним опытом</h5>
+          <h5>преподаватель английского с 4-х летним опытом</h5>
           <ScrollTop />
         </div>
       </PaddingWrapper>

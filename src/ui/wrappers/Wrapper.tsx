@@ -4,8 +4,11 @@ const BoxSolid: FC<PropsWithChildren> = ({ children }) => {
   return <div className={styles.box_solid}>{children}</div>;
 };
 
-const PaddingWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <div className={styles.padding_wrapper}>{children}</div>;
+const PaddingWrapper: FC<PropsWithChildren<{ className?: string }>> = ({
+  className = "",
+  children,
+}) => {
+  return <div className={`${styles.padding_wrapper} ${className}`}>{children}</div>;
 };
 
 const BlockWrapper: FC<PropsWithChildren<AllHTMLAttributes<HTMLDivElement["className"]>>> = ({
