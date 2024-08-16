@@ -5,18 +5,22 @@ import { FC } from "react";
 import styles from "./Products.module.scss";
 
 const data = [
-  { href: "/courses/general" },
+  {
+    href: "https://docs.google.com/forms/d/1HoDpkdL2KJLVJNuMI3QjSShue_6oakS2ivBriH42Kn4/viewform?edit_requested=true",
+  },
   { href: "/courses/tech" },
   { href: "/courses/interview" },
   { href: "/courses/group" },
 ];
 
-type ICourseLink = LinkProps;
+type ICourseLink = LinkProps & {
+  title?: string;
+};
 
-const CourseLink: FC<ICourseLink> = ({ ...rest }) => {
+const CourseLink: FC<ICourseLink> = ({ title, ...rest }) => {
   return (
     <Link {...rest} className={styles.course_link}>
-      Подробности
+      {title || "Подробности"}
     </Link>
   );
 };
@@ -28,14 +32,15 @@ const Products: FC = () => {
         <PaddingWrapper>
           <div className={styles.interview_body_container}>
             <div className={styles.product_heading}>
-              <SectionHeading>Курс ITalk - английский для IT (в мини-группах)</SectionHeading>
+              <SectionHeading>Курс ITalk - английский для IT</SectionHeading>
               <h3>
                 Для уровней <span>A2+ и выше</span>
               </h3>
             </div>
             <p>
-              В рамках программы мы изучим универсальные темы для работы в IT индустрии, избавимся
-              от языкового барьера и подготовимся к интервью.
+              В рамках программы мы изучим универсальные темы для работы в IT
+              индустрии, избавимся от языкового барьера и подготовимся к
+              интервью.
             </p>
           </div>
           <div className={styles.link_container}>
@@ -43,14 +48,26 @@ const Products: FC = () => {
           </div>
         </PaddingWrapper>
         <div className={styles.bg_svg_container}>
-          <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            id="sw-js-blob-svg"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             {" "}
             <defs>
               {" "}
               <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
                 {" "}
-                <stop id="stop1" stopColor="rgba(0, 0, 0, 1)" offset="0%"></stop>{" "}
-                <stop id="stop2" stopColor="rgba(0, 0, 0, 0.99)" offset="100%"></stop>{" "}
+                <stop
+                  id="stop1"
+                  stopColor="rgba(0, 0, 0, 1)"
+                  offset="0%"
+                ></stop>{" "}
+                <stop
+                  id="stop2"
+                  stopColor="rgba(0, 0, 0, 0.99)"
+                  offset="100%"
+                ></stop>{" "}
               </linearGradient>{" "}
             </defs>{" "}
             <path
@@ -70,15 +87,11 @@ const Products: FC = () => {
           <PaddingWrapper>
             <div className={styles.general_body_container}>
               <div className={styles.product_heading}>
-                <SectionHeading>Общий Английский</SectionHeading>
+                <SectionHeading>Speaking club</SectionHeading>
                 <h3>
-                  Для уровней <span>A1 и выше</span>
+                  Для уровней <span>A2 и выше</span>
                 </h3>
               </div>
-              <p>
-                Материал структурирован таким образом, чтобы студент как можно быстрее достиг целей
-                и мог эффективно использовать полученные знания самостоятельно.
-              </p>
             </div>
             <div className={styles.link_container}>
               <CourseLink {...data[0]} />
@@ -117,8 +130,9 @@ const Products: FC = () => {
               </h3>
             </div>
             <p>
-              Узнаете, как грамотно составить резюме, правильно отвечать на tricky questions,
-              подготовиться к техническому интервью и в целом стать увереннее в своем английском.
+              Узнаете, как грамотно составить резюме, правильно отвечать на
+              tricky questions, подготовиться к техническому интервью и в целом
+              стать увереннее в своем английском.
             </p>
           </div>
           <div className={styles.link_container}>
@@ -126,14 +140,26 @@ const Products: FC = () => {
           </div>
         </PaddingWrapper>
         <div className={styles.bg_svg_container}>
-          <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            id="sw-js-blob-svg"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             {" "}
             <defs>
               {" "}
               <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
                 {" "}
-                <stop id="stop1" stopColor="rgba(0, 0, 0, 1)" offset="0%"></stop>{" "}
-                <stop id="stop2" stopColor="rgba(0, 0, 0, 0.99)" offset="100%"></stop>{" "}
+                <stop
+                  id="stop1"
+                  stopColor="rgba(0, 0, 0, 1)"
+                  offset="0%"
+                ></stop>{" "}
+                <stop
+                  id="stop2"
+                  stopColor="rgba(0, 0, 0, 0.99)"
+                  offset="100%"
+                ></stop>{" "}
               </linearGradient>{" "}
             </defs>{" "}
             <path

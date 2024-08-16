@@ -5,7 +5,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { IoArrowUp } from "react-icons/io5";
 
-const SocialLink: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }) => {
+const SocialLink: FC<PropsWithChildren<ISocialLink>> = ({
+  children,
+  ...rest
+}) => {
   return (
     <a {...rest} className={styles.social} target="_blank">
       {children}
@@ -21,7 +24,10 @@ const IconButton: FC<PropsWithChildren<IBtn>> = ({ children, ...rest }) => {
   );
 };
 
-const ReferenceLink: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }) => {
+const ReferenceLink: FC<PropsWithChildren<ISocialLink>> = ({
+  children,
+  ...rest
+}) => {
   return (
     <a {...rest} className={styles.reference} target="_blank">
       {children}
@@ -29,9 +35,17 @@ const ReferenceLink: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }
   );
 };
 
-const EnrollBtn: FC<PropsWithChildren<ISocialLink>> = ({ children, ...rest }) => {
+const EnrollBtn: FC<PropsWithChildren<ISocialLink>> = ({
+  children,
+  ...rest
+}) => {
   return (
-    <a {...rest} href="https://t.me/aniutarus" target="_blank" className={styles.enroll}>
+    <a
+      href="https://t.me/aniutarus"
+      target="_blank"
+      {...rest}
+      className={styles.enroll}
+    >
       {children}
     </a>
   );
@@ -54,8 +68,8 @@ const NavLink: FC<INavLink> = ({ title, icon, ...rest }) => {
   );
 };
 
-export const ScrollTop: FC<IBtn> = props => {
-  const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
+export const ScrollTop: FC<IBtn> = (props) => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     !!props.onClick ? props.onClick(e) : null;
     window.scrollTo(0, 0);
   };

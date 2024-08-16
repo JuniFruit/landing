@@ -64,9 +64,10 @@
 
 .contents {
   @apply flex flex-col gap-10 py-2 px-1;
-  > h2 {
-    @apply text-2xl font-bold text-accent-600;
-  }
+}
+
+.course_info_heading {
+  @apply text-2xl font-bold text-accent-600;
 }
 
 .spoiler_container {
@@ -126,6 +127,42 @@
   }
 }
 
+.price_slashed {
+  @apply text-center flex flex-col opacity-0 gap-2 py-2 animate-fadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.3s;
+
+  > span {
+    @apply text-accent-500 text-3xl font-bold;
+
+    @screen md {
+      @apply text-4xl;
+    }
+  }
+  > p {
+    @apply text-text-main-600 font-bold text-sm opacity-60;
+  }
+}
+
+.price_small {
+  @apply text-center flex flex-col opacity-0 gap-2 py-2 animate-fadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.3s;
+
+  > span {
+    @apply text-black text-xs font-medium;
+
+    @screen md {
+      @apply text-xl;
+    }
+  }
+  > p {
+    @apply text-text-main-600 font-bold text-sm opacity-60;
+  }
+}
+
 .general_course_description {
   @apply flex flex-col gap-3;
 }
@@ -153,6 +190,23 @@
   .floating_box_children {
     @apply flex flex-col gap-5 px-4 py-5;
   }
+}
+
+.course_info_box {
+  @apply overflow-hidden  rounded shadow-bothMd bg-main-600;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  max-width: 22rem;
+  .course_info_box_children {
+    @apply h-full flex flex-col gap-5 px-4 py-5;
+  }
+
+  @screen md {
+    min-width: 20rem;
+  }
+}
+
+.course_info_line {
+  @apply text-center;
 }
 
 .course_large_layout {

@@ -4,12 +4,16 @@ import {
   FaFlagUsa,
   FaHome,
   FaIdCard,
-  FaKeyboard,
   FaTelegram,
   FaMicrophoneAlt,
 } from "react-icons/fa";
 import styles from "./Header.module.scss";
-import { IoClose, IoLogoInstagram, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
+import {
+  IoClose,
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoLogoYoutube,
+} from "react-icons/io5";
 
 type INav = {
   onClickOutside?: () => void;
@@ -18,8 +22,9 @@ type INav = {
 const Nav: FC<INav> = ({ onClickOutside }) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleClick: MouseEventHandler<HTMLDivElement> = e => {
-    if (e.target !== menuRef.current && !!onClickOutside) return onClickOutside();
+  const handleClick: MouseEventHandler<HTMLDivElement> = (e) => {
+    if (e.target !== menuRef.current && !!onClickOutside)
+      return onClickOutside();
   };
 
   return (
@@ -37,7 +42,7 @@ const Nav: FC<INav> = ({ onClickOutside }) => {
         </div>
         <nav className={styles.nav_links}>
           <ul>
-            {navData.map(link => (
+            {navData.map((link) => (
               <li key={link.title}>
                 <NavLink {...link} key={link.href} />
               </li>
@@ -52,16 +57,20 @@ const Nav: FC<INav> = ({ onClickOutside }) => {
 
 var navData = [
   { title: "Обо мне", href: "/", icon: FaHome },
-  { title: "Общий английский", href: "/courses/general", icon: FaFlagUsa },
+  // { title: "Общий английский", href: "/courses/general", icon: FaFlagUsa },
   // { title: "IT английский", href: "/courses/tech", icon: FaKeyboard },
-  { title: "Подготовка к собеседованию", href: "/courses/interview", icon: FaIdCard },
+  {
+    title: "Подготовка к собеседованию",
+    href: "/courses/interview",
+    icon: FaIdCard,
+  },
   { title: "Курс ITalk", href: "/courses/group", icon: FaMicrophoneAlt },
 ];
 
 export const SocialLinks: FC = () => {
   return (
     <ul className={styles.social_links}>
-      {socialLinksData.map(link => (
+      {socialLinksData.map((link) => (
         <li key={link.id}>
           <SocialLink key={link.id} href={link.href}>
             {link.icon({})}

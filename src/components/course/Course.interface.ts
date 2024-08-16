@@ -16,6 +16,8 @@ export type ICourseHeading = {
 export type ICoursePrice = {
   price: number;
   clarification?: string;
+  classname?: string;
+  secondPrice?: number;
 };
 
 export type ICourseIntro = {

@@ -52,7 +52,9 @@ function TechLargeLayout() {
             <TechCourseLearn key={"learn"} />,
             <TechCourseDescription key={"description"} />,
           ]}
-          rightChildren={[<div key="placeholder" style={{ width: "26rem" }}></div>]}
+          rightChildren={[
+            <div key="placeholder" style={{ width: "26rem" }}></div>,
+          ]}
         />
       </PaddingWrapper>
     </section>
@@ -81,9 +83,9 @@ function TechCourseHeading() {
     <>
       <CourseHeading title="IT Английский" key={"IT Eng"} />
       <CourseIntro>
-        Подойдет тем кто работает или еще учится в сфере айти и хочет трудоустроиться в
-        международную компанию удаленно, релоцироваться и найти работу заграницей или же обучаться
-        на англоязычных IT курсах.
+        Подойдет тем кто работает или еще учится в сфере айти и хочет
+        трудоустроиться в международную компанию удаленно, релоцироваться и
+        найти работу заграницей или же обучаться на англоязычных IT курсах.
       </CourseIntro>
     </>
   );
@@ -91,7 +93,10 @@ function TechCourseHeading() {
 function TechCourseEnroll() {
   return (
     <>
-      <CoursePrice price={3000} clarification="за 1 час индивидуального занятия" />
+      <CoursePrice
+        price={3000}
+        clarification="за 1 час индивидуального занятия"
+      />
       <EnrollBtn>Записаться</EnrollBtn>
     </>
   );
@@ -105,7 +110,7 @@ function TechCourseLearn() {
           Cвободно общаться на следующие темы, используя продвинутую лексику:
         </h3>
         <ul className={styles.course_contents_list}>
-          {COURSE_CONTENTS.map(item => (
+          {COURSE_CONTENTS.map((item) => (
             <ListItem {...item} key={item.title} />
           ))}
         </ul>
@@ -119,9 +124,10 @@ function TechCourseDescription() {
     <CourseDescription>
       <div className={styles.general_course_description}>
         <CourseParagraph>
-          Занятия включают в себя не только основы английского языка, но и фокусируются на развитии
-          навыков, необходимых для успешной карьеры в сфере IT, таких как письменная и устная
-          коммуникация, общение с коллегами и клиентами на английском языке.
+          Занятия включают в себя не только основы английского языка, но и
+          фокусируются на развитии навыков, необходимых для успешной карьеры в
+          сфере IT, таких как письменная и устная коммуникация, общение с
+          коллегами и клиентами на английском языке.
         </CourseParagraph>
         <CourseParagraph>
           Программа может редактироваться под индивидуальные запросы студента.
@@ -129,7 +135,7 @@ function TechCourseDescription() {
         <CourseParagraph>
           <h3 className="my-3">Грамматика, включенная в курс:</h3>
           <ul className={styles.general_course_description_bulletpoints}>
-            {COURSE_DESC_BP.map(item => (
+            {COURSE_DESC_BP.map((item) => (
               <li key={item.title}>
                 <span>{item.icon({})}</span>
                 {item.title}
@@ -138,12 +144,14 @@ function TechCourseDescription() {
           </ul>
         </CourseParagraph>
         <CourseParagraph>
-          За время прохождения программы вы <b>гарантированно преодолеете языковой барьер </b>, так
-          как одной из главных целей программы является развитие коммуникативных навыков.
+          За время прохождения программы вы{" "}
+          <b>гарантированно преодолеете языковой барьер </b>, так как одной из
+          главных целей программы является развитие коммуникативных навыков.
         </CourseParagraph>
         <CourseParagraph>
-          Весь материал размещен на интерактивной платформе, что позволяет сделать задания
-          максимально разнообразными. Домашнее задание выполняется также на ней.
+          Весь материал размещен на интерактивной платформе, что позволяет
+          сделать задания максимально разнообразными. Домашнее задание
+          выполняется также на ней.
         </CourseParagraph>
       </div>
     </CourseDescription>
@@ -155,13 +163,16 @@ function TechCourseRequirements() {
     <ol className={styles.requirements}>
       <li>
         {" "}
-        Необходимый уровень для старта уверенный А2-начальный В1 (программа также подойдет и для
-        более продвинутых уровней) проверить уровень можно{" "}
-        <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
+        Необходимый уровень для старта уверенный А2-начальный В1 (программа
+        также подойдет и для более продвинутых уровней) проверить уровень можно{" "}
+        <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>
+          здесь
+        </ReferenceLink>
+        .
       </li>
       <li>
-        Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и
-        подтверждения уровня.{" "}
+        Перед началом занятий проводится бесплатная консультация (15-20 минут)
+        для знакомства и подтверждения уровня.{" "}
       </li>
     </ol>
   );

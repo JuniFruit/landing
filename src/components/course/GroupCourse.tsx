@@ -1,10 +1,10 @@
 import { FC } from "react";
 import {
   CourseContents,
-  CourseDescription,
   CourseFloatingBox,
   CourseHeading,
   CourseImage,
+  CourseInfoBox,
   CourseIntro,
   CourseLargeLayout,
   CourseParagraph,
@@ -51,10 +51,12 @@ function GroupLargeLayout() {
           leftChildren={[
             <GroupCourseDescription key={"description"} />,
             <GroupCourseLearn key={"learn"} />,
-            <GroupSubDescription />,
           ]}
-          rightChildren={[<div key="placeholder" style={{ width: "26rem" }}></div>]}
+          rightChildren={[
+            <div key="placeholder" style={{ width: "26rem" }}></div>,
+          ]}
         />
+        <GroupCourseOffers key={"group_offers"} />,
       </PaddingWrapper>
     </section>
   );
@@ -69,12 +71,127 @@ function GroupMobile() {
         <GroupCourseEnroll />
         <GroupCourseDescription />
         <GroupCourseLearn />
-        <GroupSubDescription />
-        <Spoiler title="Требования" isInitOpen={true}>
+        <Spoiler title="" isInitOpen={true}>
           <GroupCourseRequirements />
         </Spoiler>
+        <GroupCourseOffers isMobile={true} />
       </PaddingWrapper>
     </section>
+  );
+}
+
+function GroupCourseOffers({ isMobile = false }) {
+  return (
+    <>
+      <PaddingWrapper>
+        <div
+          className={`flex gap-20 ${isMobile ? "flex-col justify-center" : ""}`}
+          id="offers"
+        >
+          <CourseInfoBox>
+            <div className="flex flex-col h-full justify-between gap-5">
+              <div className="flex flex-col gap-5">
+                <h2 className={`${styles.course_info_heading} text-center`}>
+                  Tarif
+                </h2>
+
+                <div className={styles.course_info_line}>
+                  <b>4</b>-х месячный доступ к интерактивной платформе с
+                  материалами и заданиями курса
+                </div>
+                <div className={styles.course_info_line}>
+                  <b>12+</b> видео с разбором грамматических тем
+                </div>
+                <div className={styles.course_info_line}>
+                  обратная связь по устным и письменным заданиям от куратора
+                </div>
+                <div className={styles.course_info_line}>
+                  обратная связь по резюме, cover & follow up letters, ответам
+                  на interview questions от куратора
+                </div>
+                <div className={styles.course_info_line}>
+                  дополнительный месяц доступа к курсу, чтобы успеть закончить
+                  все задания
+                </div>
+              </div>
+              <div className="flex flex-col gap-5">
+                <CoursePrice
+                  price={90}
+                  secondPrice={9000}
+                  classname={styles.price_slashed}
+                  clarification="в месяц"
+                />
+                <CoursePrice
+                  price={360}
+                  secondPrice={36000}
+                  classname={styles.price_small}
+                  clarification="за весь курс"
+                />
+                <EnrollBtn>Записаться</EnrollBtn>
+              </div>
+            </div>
+          </CourseInfoBox>
+          <CourseInfoBox>
+            <div className="flex flex-col h-full justify-between gap-5">
+              <div className="flex flex-col gap-5">
+                <h2 className={`${styles.course_info_heading} text-center`}>
+                  Tarif
+                </h2>
+
+                <div className={styles.course_info_line}>
+                  <b>4</b>-х месячный доступ к интерактивной платформе с
+                  материалами и заданиями курса
+                </div>
+                <div className={styles.course_info_line}>
+                  <b>
+                    32 онлайн занятия (по 60 минут) в мини-группе* (до 6
+                    человек) с Анной
+                  </b>
+                  <p className="text-sm">
+                    *группы распределяются по уровню и выбирается наиболее
+                    удобное время для всех участников, именно поэтому, перед
+                    началом курса проводится вводная консультация для знакомства
+                    и подтверждения уровня
+                  </p>
+                </div>
+                <div className={styles.course_info_line}>
+                  обратная связь по устным и письменным заданиям от <b>Анны</b>
+                </div>
+                <div className={styles.course_info_line}>
+                  обратная связь по резюме, cover & follow up letters, ответам
+                  на interview questions от <b>Анны</b>
+                </div>
+                <div className={styles.course_info_line}>
+                  <b>
+                    индивидуальное mock interview по окончании курса (15-20
+                    минут)
+                  </b>
+                </div>
+                <div className={styles.course_info_line}>
+                  дополнительные <b>2 месяца</b> доступа к курсу, чтобы успеть
+                  закончить все задания
+                </div>
+              </div>
+              <div className="flex flex-col gap-5">
+                <CoursePrice
+                  price={180}
+                  secondPrice={18000}
+                  classname={styles.price_slashed}
+                  clarification="в месяц"
+                />
+                <CoursePrice
+                  price={760}
+                  secondPrice={76000}
+                  classname={styles.price_small}
+                  clarification="за весь курс"
+                />
+                <EnrollBtn>Записаться</EnrollBtn>
+              </div>
+            </div>
+          </CourseInfoBox>
+        </div>
+      </PaddingWrapper>
+    </>
   );
 }
 
@@ -83,9 +200,12 @@ function GroupCourseHeading() {
     <>
       <CourseHeading title="Курс ITalk – английский для айти" key={"IT Eng"} />
       <CourseIntro>
-        Подойдет тем, кто работает или еще учится в сфере айти и хочет трудоустроиться в
-        международную компанию удаленно, релоцироваться и найти работу заграницей или же обучаться
-        на англоязычных IT курсах.
+        <i>Прокачай english и устройся на работу abroad</i>
+      </CourseIntro>
+      <CourseIntro>
+        Подойдет тем, кто работает или еще учится в сфере айти и хочет
+        трудоустроиться в международную компанию удаленно, релоцироваться и
+        найти работу заграницей или же обучаться на англоязычных IT курсах.
       </CourseIntro>
     </>
   );
@@ -93,8 +213,9 @@ function GroupCourseHeading() {
 function GroupCourseEnroll() {
   return (
     <>
-      <CoursePrice price={120} clarification="в месяц" />
-      <EnrollBtn>Записаться</EnrollBtn>
+      <EnrollBtn target="_self" href="#offers">
+        Подробнее о тарифах
+      </EnrollBtn>
     </>
   );
 }
@@ -105,13 +226,13 @@ function GroupCourseLearn() {
       <CourseContents heading="Что входит в курс">
         <h3 className="font-bold">Лексические темы:</h3>
         <ul className={styles.course_contents_list}>
-          {COURSE_CONTENTS_VOCAB.map(item => (
+          {COURSE_CONTENTS_VOCAB.map((item) => (
             <ListItem {...item} key={item.title} />
           ))}
         </ul>
         <h3 className="font-bold">Грамматические темы:</h3>
         <ul className={styles.course_contents_list}>
-          {COURSE_CONTENTS_GRAMMAR.map(item => (
+          {COURSE_CONTENTS_GRAMMAR.map((item) => (
             <ListItem {...item} key={item.title} />
           ))}
         </ul>
@@ -123,24 +244,28 @@ function GroupCourseLearn() {
 function GroupCourseDescription() {
   return (
     <div className={styles.general_course_description}>
-      <BoxSolid>
-        <CourseParagraph>
-          <ul className="font-medium flex flex-col gap-2">
-            <li>
-              <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в мини-группе (до 6 человек)
-            </li>
-            <li>
-              <strong>длительность:</strong> 4 месяца
-            </li>
-            <li>
-              <strong>старт:</strong> 13-14 февраля
-            </li>
-          </ul>
-        </CourseParagraph>
-      </BoxSolid>
+      {/* <BoxSolid> */}
+      {/*   <CourseParagraph> */}
+      {/*     <ul className="font-medium flex flex-col gap-2"> */}
+      {/*       <li> */}
+      {/*         <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в */}
+      {/*         мини-группе (до 6 человек) */}
+      {/*       </li> */}
+      {/*       <li> */}
+      {/*         <strong>длительность:</strong> 4 месяца */}
+      {/*       </li> */}
+      {/*       <li> */}
+      {/*         <strong>старт:</strong> 13-14 февраля */}
+      {/*       </li> */}
+      {/*     </ul> */}
+      {/*   </CourseParagraph> */}
+      {/* </BoxSolid> */}
       <CourseParagraph>
         <ul className={styles.general_course_description_bulletpoints}>
-          {COURSE_DESC_BP.map(item => (
+          <h6 className="my-5 text-[1.2rem]">
+            Мы будем комплексно работать над всеми аспектами языка:
+          </h6>
+          {COURSE_DESC_BP.map((item) => (
             <li key={item.title}>
               <span>{item.icon({})}</span>
               {item.title}
@@ -148,6 +273,12 @@ function GroupCourseDescription() {
           ))}
         </ul>
       </CourseParagraph>
+      <p className="font-medium mt-5">
+        За 4 месяца обучения вы не только прокачаете английский до следующего
+        уровня, но и станете увереннее вести себя на собеседованиях, дэйликах и
+        презентациях на английском
+      </p>
+      <CourseParagraph></CourseParagraph>
     </div>
   );
 }
@@ -157,13 +288,18 @@ function GroupCourseRequirements() {
     <ol className={styles.requirements}>
       <li>
         {" "}
-        Необходимый уровень для старта уверенный А2-начальный В1 (программа также подойдет и для
-        более продвинутых уровней). Проверить уровень можно{" "}
-        <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
+        Необходимый уровень для старта уверенный А2-начальный В1 (программа
+        также подойдет и для более продвинутых уровней). Проверить уровень можно{" "}
+        <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>
+          здесь
+        </ReferenceLink>
+        .
       </li>
       <li>
-        Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и
-        подтверждения уровня. На ней я подробнее расскажу о курсе, покажу материал и платформу.
+        Курс размещен на интерактивной платформе Edvibe, доступ к которой
+        предоставляется 24/7. Тестовые упражнения проверяются автоматически, а
+        задания на письмо и говорение присылаются в телеграме и проверяются
+        Анной или куратором (в зависимости от тарифа)
       </li>
     </ol>
   );
@@ -173,10 +309,10 @@ function GroupSubDescription() {
   return (
     <CourseParagraph>
       <p className="font-medium">
-        Весь материал размещен на интерактивной платформе, доступ к которой предоставляется 24/7.
-        Домашнее задание также размещено на платформе, тестовые упражнения проверяются
-        автоматически, а задания на письмо и говорение присылаются в телеграме и проверяются лично
-        мной.
+        Весь материал размещен на интерактивной платформе, доступ к которой
+        предоставляется 24/7. Домашнее задание также размещено на платформе,
+        тестовые упражнения проверяются автоматически, а задания на письмо и
+        говорение присылаются в телеграме и проверяются лично мной.
       </p>
     </CourseParagraph>
   );
@@ -185,19 +321,20 @@ function GroupSubDescription() {
 export default Group;
 
 var COURSE_DESC_BP = [
-  { title: "Мы будем комплексно работать над всеми аспектами языка", icon: IoPin },
   { title: "Пополним словарный запас актуальной IT лексикой", icon: IoPin },
   {
-    title: "Изучим грамматику с точки зрения ее применения в реальных рабочих ситуациях",
-    icon: IoPin,
-  },
-  {
-    title: "Научимся грамотно выражать свои мысли и общаться с коллегами и клиентами",
+    title:
+      "Изучим грамматику с точки зрения ее применения в реальных рабочих ситуациях",
     icon: IoPin,
   },
   {
     title:
-      "Составим актуальное резюме, напишем cover & follow up letters, подготовимся к собеседованию",
+      "Научимся грамотно выражать свои мысли и общаться с коллегами и клиентами",
+    icon: IoPin,
+  },
+  {
+    title:
+      "Составим актуальное резюме, напишем cover & follow up letters, подготовим 30+ ответов на самые популярные вопросы на собеседовании",
     icon: IoPin,
   },
 ];
@@ -276,10 +413,6 @@ var COURSE_CONTENTS_VOCAB = [
   },
   {
     title: "Startup culture",
-    description: "",
-  },
-  {
-    title: "Writing technical documentation",
     description: "",
   },
   {

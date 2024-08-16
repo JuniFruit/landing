@@ -15,7 +15,13 @@ import {
 import styles from "./Course.module.scss";
 
 const CourseImage: FC<ICourseImage> = ({ image }) => {
-  return <ImgBg className={styles.img_container} aria-label="Логотип курса" imgSrc={image} />;
+  return (
+    <ImgBg
+      className={styles.img_container}
+      aria-label="Логотип курса"
+      imgSrc={image}
+    />
+  );
 };
 
 const CourseIntro: FC<PropsWithChildren> = ({ children }) => {
@@ -23,7 +29,10 @@ const CourseIntro: FC<PropsWithChildren> = ({ children }) => {
 };
 
 const ListItem: FC<IListItem> = ({ title, description }) => {
-  const { ref, isIntersecting } = useIntersect({ options: getIntersectDefaultOpt(), isOnce: true });
+  const { ref, isIntersecting } = useIntersect({
+    options: getIntersectDefaultOpt(),
+    isOnce: true,
+  });
 
   return (
     <li
@@ -38,11 +47,9 @@ const ListItem: FC<IListItem> = ({ title, description }) => {
     </li>
   );
 };
-const Spoiler: FC<PropsWithChildren<{ title: string; isInitOpen?: boolean }>> = ({
-  children,
-  title,
-  isInitOpen = false,
-}) => {
+const Spoiler: FC<
+  PropsWithChildren<{ title: string; isInitOpen?: boolean }>
+> = ({ children, title, isInitOpen = false }) => {
   const [isOpen, setIsOpen] = useState(isInitOpen);
 
   const handleClick = () => {
@@ -50,37 +57,73 @@ const Spoiler: FC<PropsWithChildren<{ title: string; isInitOpen?: boolean }>> = 
   };
 
   return (
-    <div className={styles.spoiler_container} aria-haspopup={true} aria-expanded={isOpen}>
-      <button onClick={handleClick} aria-label={`${!isOpen ? "открыть" : "закрыть"} блок ${title}`}>
+    <div
+      className={styles.spoiler_container}
+      aria-haspopup={true}
+      aria-expanded={isOpen}
+    >
+      <button
+        onClick={handleClick}
+        aria-label={`${!isOpen ? "открыть" : "закрыть"} блок ${title}`}
+      >
         {" "}
         {title} <span>{isOpen ? IoCaretUp({}) : IoCaretDown({})}</span>
       </button>
-      <div className={`${styles.spoiler_content} ${isOpen ? styles.spoiler_content_active : ""}`}>
+      <div
+        className={`${styles.spoiler_content} ${isOpen ? styles.spoiler_content_active : ""}`}
+      >
         {children}
       </div>
     </div>
   );
 };
 
-const CoursePrice: FC<ICoursePrice> = ({ price, clarification }) => {
-  const formater = new Intl.NumberFormat('de-DE', {
+const CoursePrice: FC<ICoursePrice> = ({
+  price,
+  secondPrice,
+  classname,
+  clarification,
+}) => {
+  const formater = new Intl.NumberFormat("de-DE", {
     style: "decimal",
     currency: "EUR",
   });
+  let secondPriceFormatter;
+  if (secondPrice) {
+    secondPriceFormatter = new Intl.NumberFormat("ru-RU", {
+      style: "decimal",
+      currency: "RUB",
+    });
+  }
 
   return (
-    <div className={styles.price}>
-      <span>{formater.format(price)} €</span>
+    <div className={`${classname || styles.price}`}>
+      <span>
+        {`${formater.format(price)} € ${secondPriceFormatter ? `/ ${secondPriceFormatter.format(secondPrice || 0)} ₽` : ""}`}{" "}
+      </span>
       <p>{clarification}</p>
     </div>
   );
 };
 
-const CourseFloatingBox: FC<PropsWithChildren<IFloatingBox>> = ({ courseImage, children }) => {
+const CourseFloatingBox: FC<PropsWithChildren<IFloatingBox>> = ({
+  courseImage,
+  children,
+}) => {
   return (
     <div className={styles.floating_box}>
       {courseImage}
       <div className={styles.floating_box_children}>{children}</div>
+    </div>
+  );
+};
+
+const CourseInfoBox: FC<PropsWithChildren<Record<any, any>>> = ({
+  children,
+}) => {
+  return (
+    <div className={styles.course_info_box}>
+      <div className={styles.course_info_box_children}>{children}</div>
     </div>
   );
 };
@@ -99,7 +142,7 @@ const CourseContents: FC<PropsWithChildren<ICourseContents>> = ({
 }) => {
   return (
     <div className={styles.contents}>
-      <h2>{heading}</h2>
+      <h2 className={styles.course_info_heading}>{heading}</h2>
       {children}
     </div>
   );
@@ -114,11 +157,14 @@ const CourseDescription: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-const CourseLargeLayout: FC<ICourseLargeLayout> = ({ leftChildren, rightChildren }) => {
+const CourseLargeLayout: FC<ICourseLargeLayout> = ({
+  leftChildren,
+  rightChildren,
+}) => {
   return (
     <div className={styles.course_large_layout}>
-      <div>{leftChildren.map(child => child)}</div>
-      {rightChildren.map(child => child)}
+      <div>{leftChildren.map((child) => child)}</div>
+      {rightChildren.map((child) => child)}
     </div>
   );
 };
@@ -139,4 +185,5 @@ export {
   CourseParagraph,
   CourseFloatingBox,
   CourseLargeLayout,
+  CourseInfoBox,
 };
