@@ -67,7 +67,17 @@
 }
 
 .course_info_heading {
-  @apply text-2xl font-bold text-accent-600;
+  @apply text-xl font-bold text-accent-600;
+  @screen md {
+    @apply text-2xl;
+  }
+}
+
+.course_page_section_heading {
+  @apply text-3xl my-5 font-bold text-accent-600;
+  @screen md {
+    @apply text-4xl my-10;
+  }
 }
 
 .spoiler_container {
@@ -104,12 +114,12 @@
 }
 
 .course_intro {
-  @apply text-xs font-medium my-8 opacity-0 animate-slideInBottom leading-7;
+  @apply text-xs font-medium my-5 opacity-0 animate-slideInBottom leading-7;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.3s;
   @screen md {
-    @apply text-md;
+    @apply text-md my-8;
   }
 }
 

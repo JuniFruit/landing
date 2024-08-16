@@ -1,3 +1,11 @@
+function lessonReviewsImgPaths() {
+  const count = 25;
+  const result: string[] = [];
+  for (let i = 1; i < count; i++) {
+    result.push(`/static/images/group_lesson_review_${i}.jpg`);
+  }
+  return result;
+}
 export const IMG_LINKS = {
   LOGO: "/static/images/logo.png",
   HERO: "/static/images/hero.png",
@@ -7,6 +15,7 @@ export const IMG_LINKS = {
   REVIEW_2: "/static/images/review2.jpg",
   REVIEW_3: "/static/images/review3.jpg",
   REVIEW_4: "/static/images/review4.jpg",
+  GROUP_COURSE_LESSONS_REVIEWS: lessonReviewsImgPaths(),
   GENERAL_COURSE: "/static/images/general_course.png",
   IT_COURSE: "/static/images/it_course.png",
   INTERVIEW_COURSE: "/static/images/interview_course.png",

@@ -9,15 +9,22 @@ import {
   CourseLargeLayout,
   CourseParagraph,
   CoursePrice,
+  CourseSectionHeading,
   ListItem,
   Spoiler,
 } from "./Shared";
-import { BlockWrapper, BoxSolid, PaddingWrapper } from "@/ui/wrappers/Wrapper";
+import {
+  BlockWrapper,
+  BoxSolid,
+  PaddingWrapper,
+  Phone,
+} from "@/ui/wrappers/Wrapper";
 import { EnrollBtn, ReferenceLink } from "@/ui/buttons/Buttons";
 import { AiTwotonePushpin as IoPin } from "react-icons/ai";
 import { IMG_LINKS, SHARED_LINKS } from "@/utils/general";
 import styles from "./Course.module.scss";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import Image from "next/image";
 
 const Group: FC = () => {
   const { isLaptopSmall } = useIsMobile();
@@ -57,6 +64,8 @@ function GroupLargeLayout() {
           ]}
         />
         <GroupCourseOffers key={"group_offers"} />,
+        <CourseSectionHeading title="Отызывы" classname="text-center" />
+        <GroupCourseReviews />
       </PaddingWrapper>
     </section>
   );
@@ -75,8 +84,32 @@ function GroupMobile() {
           <GroupCourseRequirements />
         </Spoiler>
         <GroupCourseOffers isMobile={true} />
+        <CourseSectionHeading title="Отызывы" classname="text-center" />
+        <GroupCourseReviews />
       </PaddingWrapper>
     </section>
+  );
+}
+
+function GroupCourseReviews() {
+  return (
+    <div className="flex justify-center">
+      <Phone>
+        <div className={styles.review_images}>
+          {IMG_LINKS.GROUP_COURSE_LESSONS_REVIEWS.map((item) => (
+            <div className={styles.review_img_box} key={item}>
+              <Image
+                src={item}
+                key={item}
+                width={280}
+                height={300}
+                alt="Отзыв ученика"
+              />
+            </div>
+          ))}
+        </div>
+      </Phone>
+    </div>
   );
 }
 
@@ -92,7 +125,8 @@ function GroupCourseOffers({ isMobile = false }) {
             <div className="flex flex-col h-full justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <h2 className={`${styles.course_info_heading} text-center`}>
-                  Tarif
+                  Тариф <br /> <br />
+                  "Самостоятельный"
                 </h2>
 
                 <div className={styles.course_info_line}>
@@ -103,11 +137,12 @@ function GroupCourseOffers({ isMobile = false }) {
                   <b>12+</b> видео с разбором грамматических тем
                 </div>
                 <div className={styles.course_info_line}>
-                  обратная связь по устным и письменным заданиям от куратора
+                  обратная связь по устным и письменным заданиям от{" "}
+                  <b>куратора</b>
                 </div>
                 <div className={styles.course_info_line}>
                   обратная связь по резюме, cover & follow up letters, ответам
-                  на interview questions от куратора
+                  на interview questions от <b>куратора</b>
                 </div>
                 <div className={styles.course_info_line}>
                   дополнительный месяц доступа к курсу, чтобы успеть закончить
@@ -116,14 +151,14 @@ function GroupCourseOffers({ isMobile = false }) {
               </div>
               <div className="flex flex-col gap-5">
                 <CoursePrice
-                  price={90}
-                  secondPrice={9000}
+                  price={100}
+                  secondPrice={10000}
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
                 <CoursePrice
-                  price={360}
-                  secondPrice={36000}
+                  price={400}
+                  secondPrice={40000}
                   classname={styles.price_small}
                   clarification="за весь курс"
                 />
@@ -135,7 +170,8 @@ function GroupCourseOffers({ isMobile = false }) {
             <div className="flex flex-col h-full justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <h2 className={`${styles.course_info_heading} text-center`}>
-                  Tarif
+                  Тариф <br /> <br />
+                  "В мини-группе"
                 </h2>
 
                 <div className={styles.course_info_line}>
@@ -147,11 +183,13 @@ function GroupCourseOffers({ isMobile = false }) {
                     32 онлайн занятия (по 60 минут) в мини-группе* (до 6
                     человек) с Анной
                   </b>
-                  <p className="text-sm">
-                    *группы распределяются по уровню и выбирается наиболее
-                    удобное время для всех участников, именно поэтому, перед
-                    началом курса проводится вводная консультация для знакомства
-                    и подтверждения уровня
+                  <p className="text-[0.8rem] mt-2">
+                    <i>
+                      *группы распределяются по уровню и выбирается наиболее
+                      удобное время для всех участников, именно поэтому, перед
+                      началом курса проводится вводная консультация для
+                      знакомства и подтверждения уровня
+                    </i>
                   </p>
                 </div>
                 <div className={styles.course_info_line}>
@@ -180,8 +218,8 @@ function GroupCourseOffers({ isMobile = false }) {
                   clarification="в месяц"
                 />
                 <CoursePrice
-                  price={760}
-                  secondPrice={76000}
+                  price={720}
+                  secondPrice={72000}
                   classname={styles.price_small}
                   clarification="за весь курс"
                 />
@@ -288,8 +326,8 @@ function GroupCourseRequirements() {
     <ol className={styles.requirements}>
       <li>
         {" "}
-        Необходимый уровень для старта уверенный А2-начальный В1 (программа
-        также подойдет и для более продвинутых уровней). Проверить уровень можно{" "}
+        Необходимый уровень для старта - В1 (программа также подойдет и для
+        более продвинутых уровней). Проверить уровень можно{" "}
         <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>
           здесь
         </ReferenceLink>
@@ -305,18 +343,18 @@ function GroupCourseRequirements() {
   );
 }
 
-function GroupSubDescription() {
-  return (
-    <CourseParagraph>
-      <p className="font-medium">
-        Весь материал размещен на интерактивной платформе, доступ к которой
-        предоставляется 24/7. Домашнее задание также размещено на платформе,
-        тестовые упражнения проверяются автоматически, а задания на письмо и
-        говорение присылаются в телеграме и проверяются лично мной.
-      </p>
-    </CourseParagraph>
-  );
-}
+// function GroupSubDescription() {
+//   return (
+//     <CourseParagraph>
+//       <p className="font-medium">
+//         Весь материал размещен на интерактивной платформе, доступ к которой
+//         предоставляется 24/7. Домашнее задание также размещено на платформе,
+//         тестовые упражнения проверяются автоматически, а задания на письмо и
+//         говорение присылаются в телеграме и проверяются лично мной.
+//       </p>
+//     </CourseParagraph>
+//   );
+// }
 
 export default Group;
 

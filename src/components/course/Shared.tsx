@@ -47,6 +47,17 @@ const ListItem: FC<IListItem> = ({ title, description }) => {
     </li>
   );
 };
+
+const CourseSectionHeading: FC<
+  PropsWithChildren<{ title: string; classname?: string }>
+> = ({ title, classname }) => {
+  return (
+    <h2 className={`${styles.course_page_section_heading} ${classname || ""}`}>
+      {title}
+    </h2>
+  );
+};
+
 const Spoiler: FC<
   PropsWithChildren<{ title: string; isInitOpen?: boolean }>
 > = ({ children, title, isInitOpen = false }) => {
@@ -186,4 +197,5 @@ export {
   CourseFloatingBox,
   CourseLargeLayout,
   CourseInfoBox,
+  CourseSectionHeading,
 };

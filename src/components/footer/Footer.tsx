@@ -13,10 +13,13 @@ const Footer: FC = () => {
           <SocialLinks />
           <p>
             По всем вопросам пишите в{" "}
-            <ReferenceLink href={"https://t.me/aniutarus"}> Telegram </ReferenceLink>
+            <ReferenceLink href={"https://t.me/aniutarus"}>
+              {" "}
+              Telegram{" "}
+            </ReferenceLink>
           </p>
           <h4>Aнна Русакова</h4>
-          <h5>преподаватель английского с 4-х летним опытом</h5>
+          <h5>преподаватель английского с 5-ти летним опытом</h5>
           <ScrollTop />
         </div>
       </PaddingWrapper>
