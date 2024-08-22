@@ -84,7 +84,7 @@ function GroupMobile() {
           <GroupCourseRequirements />
         </Spoiler>
         <GroupCourseOffers isMobile={true} />
-        <CourseSectionHeading title="Отызывы" classname="text-center" />
+        <CourseSectionHeading title="Отзывы" classname="text-center" />
         <GroupCourseReviews />
       </PaddingWrapper>
     </section>
