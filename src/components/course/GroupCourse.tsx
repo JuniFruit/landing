@@ -64,7 +64,7 @@ function GroupLargeLayout() {
           ]}
         />
         <GroupCourseOffers key={"group_offers"} />,
-        <CourseSectionHeading title="Отызывы" classname="text-center" />
+        <CourseSectionHeading title="Отзывы" classname="text-center" />
         <GroupCourseReviews />
       </PaddingWrapper>
     </section>
