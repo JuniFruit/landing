@@ -126,7 +126,7 @@ function GroupCourseOffers({ isMobile = false }) {
               <div className="flex flex-col gap-5">
                 <h2 className={`${styles.course_info_heading} text-center`}>
                   Тариф <br /> <br />
-                  "Самостоятельный"
+                  "Self-start"
                 </h2>
 
                 <div className={styles.course_info_line}>
@@ -171,7 +171,7 @@ function GroupCourseOffers({ isMobile = false }) {
               <div className="flex flex-col gap-5">
                 <h2 className={`${styles.course_info_heading} text-center`}>
                   Тариф <br /> <br />
-                  "В мини-группе"
+                  "Mini-groups"
                 </h2>
 
                 <div className={styles.course_info_line}>
