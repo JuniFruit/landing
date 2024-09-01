@@ -156,12 +156,6 @@ function GroupCourseOffers({ isMobile = false }) {
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
-                <CoursePrice
-                  price={400}
-                  secondPrice={40000}
-                  classname={styles.price_small}
-                  clarification="за весь курс"
-                />
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
@@ -216,12 +210,6 @@ function GroupCourseOffers({ isMobile = false }) {
                   secondPrice={18000}
                   classname={styles.price_slashed}
                   clarification="в месяц"
-                />
-                <CoursePrice
-                  price={720}
-                  secondPrice={72000}
-                  classname={styles.price_small}
-                  clarification="за весь курс"
                 />
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
