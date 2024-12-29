@@ -152,11 +152,13 @@ function GroupCourseOffers({ isMobile = false }) {
               <div className="flex flex-col gap-5">
                 <CoursePrice
                   price={100}
-                  secondPrice={10000}
+                  secondPrice={11000}
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
-                <EnrollBtn>Записаться</EnrollBtn>
+                <EnrollBtn href={"https://forms.gle/EEX23TwYMsU8LFjK8"}>
+                  Записаться
+                </EnrollBtn>
               </div>
             </div>
           </CourseInfoBox>
@@ -207,11 +209,13 @@ function GroupCourseOffers({ isMobile = false }) {
               <div className="flex flex-col gap-5">
                 <CoursePrice
                   price={180}
-                  secondPrice={18000}
+                  secondPrice={19800}
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
-                <EnrollBtn>Записаться</EnrollBtn>
+                <EnrollBtn href={"https://forms.gle/EEX23TwYMsU8LFjK8"}>
+                  Записаться
+                </EnrollBtn>
               </div>
             </div>
           </CourseInfoBox>
