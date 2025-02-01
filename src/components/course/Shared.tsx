@@ -149,11 +149,11 @@ const CourseHeading: FC<ICourseHeading> = ({ title, ...rest }) => {
 
 const CourseContents: FC<PropsWithChildren<ICourseContents>> = ({
   children,
-  heading = "Чему научитесь",
+  heading,
 }) => {
   return (
     <div className={styles.contents}>
-      <h2 className={styles.course_info_heading}>{heading}</h2>
+      {heading ? <h2 className={styles.course_info_heading}>{heading}</h2> : ""}
       {children}
     </div>
   );

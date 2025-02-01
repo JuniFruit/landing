@@ -109,7 +109,7 @@
 .requirements {
   @apply font-bold flex flex-col gap-5;
   > li {
-    @apply ml-5 list-disc text-sm text-text-main-500;
+    @apply ml-5 list-disc text-xs text-text-main-500;
   }
 }
 

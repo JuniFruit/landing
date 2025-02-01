@@ -46,7 +46,6 @@ function GroupLargeLayout() {
                 courseImage={<CourseImage image={IMG_LINKS.GROUP_COURSE} />}
               >
                 <GroupCourseEnroll />
-                <GroupCourseRequirements />
               </CourseFloatingBox>,
             ]}
           />
@@ -56,8 +55,10 @@ function GroupLargeLayout() {
         <CourseLargeLayout
           key="large2"
           leftChildren={[
+            <GroupCourseRequirements />,
             <GroupCourseDescription key={"description"} />,
             <GroupCourseLearn key={"learn"} />,
+            <GroupSubDescription />,
           ]}
           rightChildren={[
             <div key="placeholder" style={{ width: "26rem" }}></div>,
@@ -78,11 +79,10 @@ function GroupMobile() {
       <PaddingWrapper>
         <GroupCourseHeading />
         <GroupCourseEnroll />
+        <GroupCourseRequirements />
         <GroupCourseDescription />
         <GroupCourseLearn />
-        <Spoiler title="" isInitOpen={true}>
-          <GroupCourseRequirements />
-        </Spoiler>
+        <GroupSubDescription />
         <GroupCourseOffers isMobile={true} />
         <CourseSectionHeading title="Отзывы" classname="text-center" />
         <GroupCourseReviews />
@@ -230,12 +230,17 @@ function GroupCourseHeading() {
     <>
       <CourseHeading title="Курс ITalk – английский для айти" key={"IT Eng"} />
       <CourseIntro>
-        <i>Прокачай english и устройся на работу abroad</i>
+        <i>
+          Английский для тех, кто хочет не только пройти собеседование, но и
+          комфортно чувствовать себя в дальнейшем общении с англоязычными
+          коллегами и клиентами
+        </i>
       </CourseIntro>
       <CourseIntro>
-        Подойдет тем, кто работает или еще учится в сфере айти и хочет
+        Курс подойдет тем, кто работает (или еще учится) в сфере айти и хочет
         трудоустроиться в международную компанию удаленно, релоцироваться и
-        найти работу заграницей или же обучаться на англоязычных IT курсах.
+        найти работу заграницей или же тем, кто хочет обучаться на англоязычных
+        IT курсах
       </CourseIntro>
     </>
   );
@@ -253,14 +258,20 @@ function GroupCourseEnroll() {
 function GroupCourseLearn() {
   return (
     <BoxSolid>
-      <CourseContents heading="Что входит в курс">
-        <h3 className="font-bold">Лексические темы:</h3>
+      <CourseContents>
+        <h3 className="font-bold">
+          Мы не проходим термины, которые релевантны одной профессии (тем более
+          что зачастую они в русском языке используются без перевода, например
+          «зарелизить», «задеплоить» и тп). Мы проходим лексику, которая в целом
+          нужна для коммуникации в рабочей среде, но берём ее в контексте
+          айтишных тем. Таких как:
+        </h3>
         <ul className={styles.course_contents_list}>
           {COURSE_CONTENTS_VOCAB.map((item) => (
             <ListItem {...item} key={item.title} />
           ))}
         </ul>
-        <h3 className="font-bold">Грамматические темы:</h3>
+        <h3 className="font-bold">Грамматика, включенная в курс:</h3>
         <ul className={styles.course_contents_list}>
           {COURSE_CONTENTS_GRAMMAR.map((item) => (
             <ListItem {...item} key={item.title} />
@@ -303,10 +314,9 @@ function GroupCourseDescription() {
           ))}
         </ul>
       </CourseParagraph>
-      <p className="font-medium mt-5">
-        За 4 месяца обучения вы не только прокачаете английский до следующего
-        уровня, но и станете увереннее вести себя на собеседованиях, дэйликах и
-        презентациях на английском
+      <p className="font-bold mt-5">
+        Одни словом, сделаем все, чтобы вы были на 100% готовы к старту вашей
+        международной карьеры
       </p>
       <CourseParagraph></CourseParagraph>
     </div>
@@ -316,6 +326,8 @@ function GroupCourseDescription() {
 function GroupCourseRequirements() {
   return (
     <ol className={styles.requirements}>
+      <li>Длительность: 4 месяца</li>
+      <li>Старт: 24-26 февраля (зависит от тарифа и группы)</li>
       <li>
         {" "}
         Необходимый уровень для старта - В1 (программа также подойдет и для
@@ -326,27 +338,27 @@ function GroupCourseRequirements() {
         .
       </li>
       <li>
-        Курс размещен на интерактивной платформе Edvibe, доступ к которой
-        предоставляется 24/7. Тестовые упражнения проверяются автоматически, а
-        задания на письмо и говорение присылаются в телеграме и проверяются
-        Анной или куратором (в зависимости от тарифа)
+        Стоимость: зависит от тарифa{" "}
+        <ReferenceLink target="_self" href="#offers">
+          (подробнее)
+        </ReferenceLink>
       </li>
     </ol>
   );
 }
 
-// function GroupSubDescription() {
-//   return (
-//     <CourseParagraph>
-//       <p className="font-medium">
-//         Весь материал размещен на интерактивной платформе, доступ к которой
-//         предоставляется 24/7. Домашнее задание также размещено на платформе,
-//         тестовые упражнения проверяются автоматически, а задания на письмо и
-//         говорение присылаются в телеграме и проверяются лично мной.
-//       </p>
-//     </CourseParagraph>
-//   );
-// }
+function GroupSubDescription() {
+  return (
+    <CourseParagraph>
+      <p className="font-medium">
+        Обратите внимание, что курс предполагает, что, как минимум, с 80% тем вы
+        уже знакомы. Фокус будет на то, чтобы вывести ее в речь, т.е. сделать
+        так, чтобы вы могли использовать грамотно эти конструкции в спонтанной
+        речи.
+      </p>
+    </CourseParagraph>
+  );
+}
 
 export default Group;
 
@@ -364,7 +376,7 @@ var COURSE_DESC_BP = [
   },
   {
     title:
-      "Составим актуальное резюме, напишем cover & follow up letters, подготовим 30+ ответов на самые популярные вопросы на собеседовании",
+      "Составим актуальное резюме, заполним LinkedIn профиль, напишем cover & follow up letters, подготовим 30+ ответов на самые популярные вопросы на собеседовании",
     icon: IoPin,
   },
 ];
@@ -422,7 +434,7 @@ var COURSE_CONTENTS_GRAMMAR = [
 
 var COURSE_CONTENTS_VOCAB = [
   {
-    title: "Jobs in tech",
+    title: "Why learn to program",
     description: "",
   },
   {
@@ -438,7 +450,7 @@ var COURSE_CONTENTS_VOCAB = [
     description: "",
   },
   {
-    title: "SDLC (software development lifecycle)",
+    title: "SDLC & SDLC models",
     description: "",
   },
   {
@@ -475,6 +487,18 @@ var COURSE_CONTENTS_VOCAB = [
   },
   {
     title: "Interview preparation",
+    description: "",
+  },
+  {
+    title: "LinkedIn",
+    description: "",
+  },
+  {
+    title: "Interview preparation (answering 30+ most common questions)",
+    description: "",
+  },
+  {
+    title: "Closing the interview & writing a follow up letter",
     description: "",
   },
 ];

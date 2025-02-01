@@ -29,7 +29,7 @@ const ReferenceLink: FC<PropsWithChildren<ISocialLink>> = ({
   ...rest
 }) => {
   return (
-    <a {...rest} className={styles.reference} target="_blank">
+    <a target="_blank" {...rest} className={styles.reference}>
       {children}
     </a>
   );
