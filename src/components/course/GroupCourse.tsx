@@ -58,7 +58,6 @@ function GroupLargeLayout() {
             <GroupCourseRequirements />,
             <GroupCourseDescription key={"description"} />,
             <GroupCourseLearn key={"learn"} />,
-            <GroupSubDescription />,
           ]}
           rightChildren={[
             <div key="placeholder" style={{ width: "26rem" }}></div>,
@@ -82,7 +81,6 @@ function GroupMobile() {
         <GroupCourseRequirements />
         <GroupCourseDescription />
         <GroupCourseLearn />
-        <GroupSubDescription />
         <GroupCourseOffers isMobile={true} />
         <CourseSectionHeading title="Отзывы" classname="text-center" />
         <GroupCourseReviews />
@@ -277,6 +275,7 @@ function GroupCourseLearn() {
             <ListItem {...item} key={item.title} />
           ))}
         </ul>
+        <GroupSubDescription />
       </CourseContents>
     </BoxSolid>
   );

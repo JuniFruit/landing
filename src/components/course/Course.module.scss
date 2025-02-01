@@ -232,7 +232,7 @@
   @apply flex flex-col gap-4;
 
   > li {
-    @apply flex items-center gap-2;
+    @apply font-medium flex items-center gap-2;
     > span {
       @apply w-4 h-4;
       > svg {
