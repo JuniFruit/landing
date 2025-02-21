@@ -11,7 +11,6 @@ import {
   CoursePrice,
   CourseSectionHeading,
   ListItem,
-  Spoiler,
 } from "./Shared";
 import {
   BlockWrapper,
@@ -154,9 +153,7 @@ function GroupCourseOffers({ isMobile = false }) {
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
-                <EnrollBtn href={"https://forms.gle/EEX23TwYMsU8LFjK8"}>
-                  Записаться
-                </EnrollBtn>
+                <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
           </CourseInfoBox>
@@ -211,9 +208,7 @@ function GroupCourseOffers({ isMobile = false }) {
                   classname={styles.price_slashed}
                   clarification="в месяц"
                 />
-                <EnrollBtn href={"https://forms.gle/EEX23TwYMsU8LFjK8"}>
-                  Записаться
-                </EnrollBtn>
+                <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
           </CourseInfoBox>
