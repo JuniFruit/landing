@@ -10,7 +10,7 @@ import {
   CourseParagraph,
   CoursePrice,
   ListItem,
-  Spoiler
+  Spoiler,
 } from "./Shared";
 
 import { useIsMobile } from "@/hooks/useIsMobile";
@@ -85,7 +85,8 @@ function GeneralCourseHeading() {
     <>
       <CourseHeading title="Общий Английский" key={"General eng"} />
       <CourseIntro>
-        Научись говорить, слушать и мыслить на самом популярном международном языке в мире.
+        Научись говорить, слушать и мыслить на самом популярном международном
+        языке в мире.
       </CourseIntro>
     </>
   );
@@ -107,13 +108,14 @@ function GeneralCourseLearn() {
         <CourseParagraph>
           <ul className="font-medium flex flex-col gap-2">
             <li>
-              <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в мини-группе (до 6 человек)
+              <strong>формат:</strong> 2 занятия (по 60 минут) в неделю в
+              мини-группе (до 6 человек)
             </li>
             <li>
               <strong>длительность:</strong> 4 месяца
             </li>
             <li>
-              <strong>старт:</strong> 13-14 февраля
+              <strong>старт:</strong> сентябрь
             </li>
           </ul>
         </CourseParagraph>
@@ -121,7 +123,7 @@ function GeneralCourseLearn() {
       <BoxSolid>
         <CourseContents>
           <ul className={styles.course_contents_list}>
-            {COURSE_CONTENTS.map(item => (
+            {COURSE_CONTENTS.map((item) => (
               <ListItem {...item} key={item.title} />
             ))}
           </ul>
@@ -136,12 +138,16 @@ function GeneralCourseRequirements() {
     <>
       <ol className={styles.requirements}>
         <li>
-          На данный момент идет набор в группы уровней А2, В1 и В1+. Проверить свой уровень можно{" "}
-          <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>здесь</ReferenceLink>.
+          На данный момент идет набор в группы уровней А2, В1 и В1+. Проверить
+          свой уровень можно{" "}
+          <ReferenceLink href={SHARED_LINKS.ENGLISH_LEVEL_TEST}>
+            здесь
+          </ReferenceLink>
+          .
         </li>
         <li>
-          Перед началом занятий проводится бесплатная консультация (15-20 минут) для знакомства и
-          подтверждения уровня.{" "}
+          Перед началом занятий проводится бесплатная консультация (15-20 минут)
+          для знакомства и подтверждения уровня.{" "}
         </li>
       </ol>
     </>
@@ -152,10 +158,10 @@ function GeneralCourseDescription() {
   return (
     <CourseParagraph>
       <p className="font-medium">
-        Весь материал размещен на интерактивной платформе, доступ к которой предоставляется 24/7.
-        Домашнее задание также размещено на платформе, тестовые упражнения проверяются
-        автоматически, а задания на письмо и говорение присылаются в телеграме и проверяются лично
-        мной.
+        Весь материал размещен на интерактивной платформе, доступ к которой
+        предоставляется 24/7. Домашнее задание также размещено на платформе,
+        тестовые упражнения проверяются автоматически, а задания на письмо и
+        говорение присылаются в телеграме и проверяются лично мной.
       </p>
     </CourseParagraph>
   );
@@ -166,7 +172,8 @@ export default General;
 var COURSE_CONTENTS = [
   {
     title: "Бегло говорить",
-    description: "Научимся грамотно формулировать свои мысли и преодолеем языковой барьер",
+    description:
+      "Научимся грамотно формулировать свои мысли и преодолеем языковой барьер",
   },
   {
     title: "Воспринимать на слух",
@@ -185,7 +192,8 @@ var COURSE_CONTENTS = [
   },
   {
     title: "Быть в курсе событий",
-    description: "Обсуждаем последние новости в мире, делимся мнениями, следим за событиями",
+    description:
+      "Обсуждаем последние новости в мире, делимся мнениями, следим за событиями",
   },
   {
     title: "Смотреть фильмы и читать книги в оригинале",

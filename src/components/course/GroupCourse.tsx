@@ -147,12 +147,12 @@ function GroupCourseOffers({ isMobile = false }) {
                 </div>
               </div>
               <div className="flex flex-col gap-5">
-                <CoursePrice
-                  price={100}
-                  secondPrice={11000}
-                  classname={styles.price_slashed}
-                  clarification="в месяц"
-                />
+                {/* <CoursePrice */}
+                {/*   price={100} */}
+                {/*   secondPrice={11000} */}
+                {/*   classname={styles.price_slashed} */}
+                {/*   clarification="в месяц" */}
+                {/* /> */}
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
@@ -202,12 +202,12 @@ function GroupCourseOffers({ isMobile = false }) {
                 </div>
               </div>
               <div className="flex flex-col gap-5">
-                <CoursePrice
-                  price={180}
-                  secondPrice={19800}
-                  classname={styles.price_slashed}
-                  clarification="в месяц"
-                />
+                {/* <CoursePrice */}
+                {/*   price={180} */}
+                {/*   secondPrice={19800} */}
+                {/*   classname={styles.price_slashed} */}
+                {/*   clarification="в месяц" */}
+                {/* /> */}
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
@@ -321,7 +321,7 @@ function GroupCourseRequirements() {
   return (
     <ol className={styles.requirements}>
       <li>Длительность: 4 месяца</li>
-      <li>Старт: 24-26 февраля (зависит от тарифа и группы)</li>
+      <li>Старт: сентябрь</li>
       <li>
         {" "}
         Необходимый уровень для старта - В1 (программа также подойдет и для
