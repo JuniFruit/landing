@@ -8,7 +8,7 @@ function lessonReviewsImgPaths() {
 }
 export const IMG_LINKS = {
   LOGO: "/static/images/logo.png",
-  HERO: "/static/images/hero.png",
+  HERO: "/static/images/hero.jpg",
   HERO_SPLIT: "/static/images/hero_split.jpg",
   PREVIEW: "/static/images/preview.jpg",
   REVIEW_1: "/static/images/review1.jpg",
