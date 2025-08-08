@@ -59,11 +59,11 @@ var navData = [
   { title: "Обо мне", href: "/", icon: FaHome },
   // { title: "Общий английский", href: "/courses/general", icon: FaFlagUsa },
   // { title: "IT английский", href: "/courses/tech", icon: FaKeyboard },
-  {
-    title: "Подготовка к собеседованию",
-    href: "/courses/interview",
-    icon: FaIdCard,
-  },
+  // {
+  //   title: "Подготовка к собеседованию",
+  //   href: "/courses/interview",
+  //   icon: FaIdCard,
+  // },
   { title: "Курс ITalk", href: "/courses/group", icon: FaMicrophoneAlt },
 ];
 

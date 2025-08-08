@@ -90,7 +90,14 @@ function GroupMobile() {
 
 function GroupCourseReviews() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center gap-5 flex-col items-center">
+      <div className="max-w-2xl">
+        <CourseParagraph>
+          Курс уже прошли более 70 человек, среди которых были как seniors,
+          работающие в крупных компаниях (Озон, Сбер, Яндекс, etc), так и те,
+          кто только собирался «входить в айти».
+        </CourseParagraph>
+      </div>
       <Phone>
         <div className={styles.review_images}>
           {IMG_LINKS.GROUP_COURSE_LESSONS_REVIEWS.map((item) => (
@@ -138,8 +145,8 @@ function GroupCourseOffers({ isMobile = false }) {
                   <b>куратора</b>
                 </div>
                 <div className={styles.course_info_line}>
-                  обратная связь по резюме, cover & follow up letters, ответам
-                  на interview questions от <b>куратора</b>
+                  обратная связь по резюме, linkedin, cover & follow up letters,
+                  ответам на interview questions от <b>куратора</b>
                 </div>
                 <div className={styles.course_info_line}>
                   дополнительный месяц доступа к курсу, чтобы успеть закончить
@@ -147,12 +154,12 @@ function GroupCourseOffers({ isMobile = false }) {
                 </div>
               </div>
               <div className="flex flex-col gap-5">
-                {/* <CoursePrice */}
-                {/*   price={100} */}
-                {/*   secondPrice={11000} */}
-                {/*   classname={styles.price_slashed} */}
-                {/*   clarification="в месяц" */}
-                {/* /> */}
+                <CoursePrice
+                  price={120}
+                  secondPrice={12000}
+                  classname={styles.price_slashed}
+                  clarification="в месяц"
+                />
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
@@ -187,12 +194,12 @@ function GroupCourseOffers({ isMobile = false }) {
                   обратная связь по устным и письменным заданиям от <b>Анны</b>
                 </div>
                 <div className={styles.course_info_line}>
-                  обратная связь по резюме, cover & follow up letters, ответам
-                  на interview questions от <b>Анны</b>
+                  обратная связь по резюме, linkedin, cover & follow up letters,
+                  ответам на interview questions от <b>Анны</b>
                 </div>
                 <div className={styles.course_info_line}>
                   <b>
-                    индивидуальное mock interview по окончании курса (15-20
+                    индивидуальное mock interview по окончании курса (30-40
                     минут)
                   </b>
                 </div>
@@ -202,12 +209,12 @@ function GroupCourseOffers({ isMobile = false }) {
                 </div>
               </div>
               <div className="flex flex-col gap-5">
-                {/* <CoursePrice */}
-                {/*   price={180} */}
-                {/*   secondPrice={19800} */}
-                {/*   classname={styles.price_slashed} */}
-                {/*   clarification="в месяц" */}
-                {/* /> */}
+                <CoursePrice
+                  price={200}
+                  secondPrice={20000}
+                  classname={styles.price_slashed}
+                  clarification="в месяц"
+                />
                 <EnrollBtn>Записаться</EnrollBtn>
               </div>
             </div>
@@ -253,11 +260,14 @@ function GroupCourseLearn() {
     <BoxSolid>
       <CourseContents>
         <h3 className="font-bold">
-          Мы не проходим термины, которые релевантны одной профессии (тем более
-          что зачастую они в русском языке используются без перевода, например
-          «зарелизить», «задеплоить» и тп). Мы проходим лексику, которая в целом
-          нужна для коммуникации в рабочей среде, но берём ее в контексте
-          айтишных тем. Таких как:
+          Мы не изучаем узкоспециализированные термины, которые относятся только
+          к одной профессии — тем более что многие из них уже давно используются
+          в русском языке без перевода (например, «зарелизить», «задеплоить» и
+          т.п.). <br />
+          <br />
+          Вместо этого мы фокусируемся на лексике, которая в целом нужна для
+          повседневной коммуникации в рабочей среде и берем ее в контексте
+          айтишных тем, такие как:
         </h3>
         <ul className={styles.course_contents_list}>
           {COURSE_CONTENTS_VOCAB.map((item) => (
@@ -308,10 +318,10 @@ function GroupCourseDescription() {
           ))}
         </ul>
       </CourseParagraph>
-      <p className="font-bold mt-5">
+      <h6 className="my-5 font-bold text-[1.2rem]">
         Одни словом, сделаем все, чтобы вы были на 100% готовы к старту вашей
         международной карьеры
-      </p>
+      </h6>
       <CourseParagraph></CourseParagraph>
     </div>
   );
@@ -321,7 +331,7 @@ function GroupCourseRequirements() {
   return (
     <ol className={styles.requirements}>
       <li>Длительность: 4 месяца</li>
-      <li>Старт: сентябрь</li>
+      <li>Старт: 8-го сентября</li>
       <li>
         {" "}
         Необходимый уровень для старта - В1 (программа также подойдет и для
@@ -345,10 +355,13 @@ function GroupSubDescription() {
   return (
     <CourseParagraph>
       <p className="font-medium">
-        Обратите внимание, что курс предполагает, что, как минимум, с 80% тем вы
-        уже знакомы. Фокус будет на то, чтобы вывести ее в речь, т.е. сделать
-        так, чтобы вы могли использовать грамотно эти конструкции в спонтанной
-        речи.
+        Обратите внимание: курс рассчитан на студентов, которые уже знакомы с
+        основами этих тем. Наша цель — не просто повторить правила,
+        <b>
+          {" "}
+          а научиться грамотно использовать эти конструкции в спонтанной
+          речи{" "}
+        </b>
       </p>
     </CourseParagraph>
   );
@@ -377,31 +390,19 @@ var COURSE_DESC_BP = [
 
 var COURSE_CONTENTS_GRAMMAR = [
   {
-    title: "Present simple",
+    title: "Present Simple VS Present Continuous",
     description: "",
   },
   {
-    title: "Present Continuous",
+    title: "Past Simple VS Present Perfect",
     description: "",
   },
   {
-    title: "Past Simple",
+    title: "Future forms",
     description: "",
   },
   {
-    title: "Present Perfect",
-    description: "",
-  },
-  {
-    title: "Future Simple",
-    description: "",
-  },
-  {
-    title: "To be going to",
-    description: "",
-  },
-  {
-    title: "Comparatives vs Superlatives",
+    title: "Comparatives & Superlatives",
     description: "",
   },
   {
@@ -417,7 +418,7 @@ var COURSE_CONTENTS_GRAMMAR = [
     description: "",
   },
   {
-    title: "First and second conditional",
+    title: "Conditionals",
     description: "",
   },
   {

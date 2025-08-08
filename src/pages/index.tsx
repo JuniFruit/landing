@@ -15,7 +15,7 @@ const Home: NextPage<IPageProps> = ({ title, description, image }) => {
       <Hero />
       <About />
       <Products />
-      <Reviews />
+      {/* <Reviews /> */}
     </div>
   );
 };
@@ -23,7 +23,7 @@ const Home: NextPage<IPageProps> = ({ title, description, image }) => {
 export const getStaticProps = () => {
   return {
     props: {
-      title: "Анна Русакова - преподаватель общего и IT ангийского",
+      title: "Анна Русакова - TESOL-certified преподаватель IT английского",
       description:
         "Преодолей языковой барьер. Прокачай технический английский. Подготовься к собеседованию и получи работу в зарубежной компании.",
       image: IMG_LINKS.PREVIEW,
